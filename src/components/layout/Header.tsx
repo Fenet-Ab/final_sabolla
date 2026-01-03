@@ -3,14 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import SabollaLogo from "../../assets/logo/sabolla_logo.png";
 
-// Split items for left and right distribution
-const leftNav = [
+// Consolidated nav items
+const navItems = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Products", path: "/products" },
-];
-
-const rightNav = [
   { name: "Services", path: "/services" },
   { name: "Partners", path: "/partners" },
   { name: "Contact", path: "/contact", isPrimary: true },
@@ -36,8 +33,9 @@ const Header: React.FC = () => {
   useLayoutEffect(() => {
     const updateUnderline = () => {
       if (!navRef.current) return;
+      // Select only simple links, exclude the primary button style
       const activeLink = navRef.current.querySelector<HTMLAnchorElement>(
-        `a[href='${location.pathname}']`
+        `a[href='${location.pathname}']:not(.bg-\\[\\#308667\\])`
       );
       if (activeLink) {
         setUnderline({ left: activeLink.offsetLeft, width: activeLink.offsetWidth });
@@ -45,6 +43,7 @@ const Header: React.FC = () => {
         setUnderline({ left: 0, width: 0 });
       }
     };
+    // Small delay to ensure layout is ready
     const timeout = setTimeout(updateUnderline, 100);
     window.addEventListener('resize', updateUnderline);
     return () => {
@@ -59,33 +58,34 @@ const Header: React.FC = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 z-[80] w-full font-['Montserrat'] transition-all duration-500
-          ${hasScrolled 
-            ? "bg-[#0B1A13]/95 backdrop-blur-md py-3 shadow-2xl" 
-            : "bg-transparent py-8"}`}
+          ${hasScrolled
+            ? "bg-[#0B1A13]/95 backdrop-blur-md py-3 shadow-2xl"
+            : "bg-transparent py-4 lg:py-6"}`}
       >
-        <div className="container mx-auto px-6 max-w-7xl relative">
-          
-          {/* MOBILE LAYOUT (Logo left, Burger right) */}
-          <div className="flex lg:hidden items-center justify-between">
-            <Link to="/" className="h-12 block">
-              <img src={SabollaLogo} alt="Sabolla" className="h-full w-auto object-contain" />
-            </Link>
-            <button onClick={() => setMenuOpen(!menuOpen)} className="flex items-center gap-3">
-               <span className="text-[10px] font-black text-[#F9F2D6] uppercase tracking-[0.3em] opacity-60">Menu</span>
-               <div className="w-6 flex flex-col gap-1.5 items-end">
-                <span className={`h-[2px] bg-[#F9F2D6] transition-all duration-500 ${menuOpen ? "w-6 rotate-45 translate-y-2 bg-[#308667]" : "w-6"}`} />
-                <span className={`h-[2px] bg-[#F9F2D6] transition-all duration-500 ${menuOpen ? "opacity-0" : "w-4"}`} />
-                <span className={`h-[2px] bg-[#F9F2D6] transition-all duration-500 ${menuOpen ? "w-6 -rotate-45 -translate-y-2 bg-[#308667]" : "w-5"}`} />
-              </div>
-            </button>
-          </div>
+        <div className="container mx-auto px-6 max-w-7xl relative flex items-center justify-between">
 
-          {/* DESKTOP LAYOUT (Perfectly Centered Logo) */}
-          <div className="hidden lg:grid grid-cols-3 items-center w-full" ref={navRef}>
-            
-            {/* Left Nav Items */}
-            <div className="flex justify-start space-x-10">
-              {leftNav.map((item) => (
+          {/* LOGO (Left) */}
+          <Link to="/" className="block z-50">
+            <img
+              src={SabollaLogo}
+              alt="Sabolla"
+              className={`w-auto object-contain transition-all duration-500
+                ${hasScrolled ? "h-16 lg:h-20" : "h-20 lg:h-28"}`}
+            />
+          </Link>
+
+          {/* DESKTOP NAV (Right) */}
+          <div className="hidden lg:flex items-center space-x-10 relative" ref={navRef}>
+            {navItems.map((item) => (
+              item.isPrimary ? (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="px-8 py-3 rounded-full bg-[#308667] text-white text-[13px] font-black uppercase tracking-widest hover:bg-[#F9F2D6] hover:text-[#0B1A13] transition-all shadow-lg active:scale-95 whitespace-nowrap"
+                >
+                  {item.name}
+                </Link>
+              ) : (
                 <Link
                   key={item.name}
                   to={item.path}
@@ -94,44 +94,8 @@ const Header: React.FC = () => {
                 >
                   {item.name}
                 </Link>
-              ))}
-            </div>
-
-            {/* Centered Logo */}
-            <div className="flex justify-center">
-              <Link to="/" className="transition-transform hover:scale-105 block">
-                <img
-                  src={SabollaLogo}
-                  alt="Sabolla"
-                  className={`w-auto object-contain transition-all duration-500
-                    ${hasScrolled ? "h-16" : "h-24"}`}
-                />
-              </Link>
-            </div>
-
-            {/* Right Nav Items */}
-            <div className="flex justify-end items-center space-x-10">
-              {rightNav.map((item) => (
-                item.isPrimary ? (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className="px-8 py-3 rounded-full bg-[#308667] text-white text-[13px] font-black uppercase tracking-widest hover:bg-[#F9F2D6] hover:text-[#0B1A13] transition-all shadow-lg active:scale-95 whitespace-nowrap"
-                  >
-                    {item.name}
-                  </Link>
-                ) : (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300 py-2 whitespace-nowrap
-                      ${location.pathname === item.path ? "text-[#165940]" : "text-[#39ad83] hover:text-[#1f6048]"}`}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              ))}
-            </div>
+              )
+            ))}
 
             {/* Animated Underline */}
             <motion.span
@@ -140,10 +104,21 @@ const Header: React.FC = () => {
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             />
           </div>
+
+          {/* MOBILE TOGGLE (Right) */}
+          <button onClick={() => setMenuOpen(!menuOpen)} className="flex lg:hidden items-center gap-3 z-50">
+            <span className="text-[10px] font-black text-[#F9F2D6] uppercase tracking-[0.3em] opacity-60">Menu</span>
+            <div className="w-6 flex flex-col gap-1.5 items-end">
+              <span className={`h-[2px] bg-[#F9F2D6] transition-all duration-500 ${menuOpen ? "w-6 rotate-45 translate-y-2 bg-[#308667]" : "w-6"}`} />
+              <span className={`h-[2px] bg-[#F9F2D6] transition-all duration-500 ${menuOpen ? "opacity-0" : "w-4"}`} />
+              <span className={`h-[2px] bg-[#F9F2D6] transition-all duration-500 ${menuOpen ? "w-6 -rotate-45 -translate-y-2 bg-[#308667]" : "w-5"}`} />
+            </div>
+          </button>
+
         </div>
       </motion.header>
 
-      {/* MOBILE MENU OVERLAY - (Keep existing logic) */}
+      {/* MOBILE MENU OVERLAY */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -152,9 +127,8 @@ const Header: React.FC = () => {
             exit={{ x: "100%" }}
             className="fixed inset-0 z-[75] bg-[#0B1A13] flex flex-col p-8 pt-40"
           >
-            {/* Same as your original mobile menu */}
             <div className="flex flex-col space-y-6 relative z-10 max-w-7xl mx-auto w-full px-6">
-              {[...leftNav, ...rightNav].map((item, index) => (
+              {navItems.map((item, index) => (
                 <motion.div key={item.name} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.1 }}>
                   <Link
                     to={item.path}

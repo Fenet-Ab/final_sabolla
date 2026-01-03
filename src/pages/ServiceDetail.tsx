@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  FaShieldAlt, 
-  FaChartBar, 
-  FaShip, 
-  FaCubes, 
-  FaArrowLeft, 
+import {
+  FaShieldAlt,
+  FaChartBar,
+  FaShip,
+  FaCubes,
+  FaArrowLeft,
   FaLayerGroup,
-  FaChevronRight 
+  FaChevronRight
 } from 'react-icons/fa';
 
 // 1. IMPORT YOUR LOCAL ASSET
@@ -72,23 +72,23 @@ const ServiceDetail: React.FC = () => {
 
   return (
     <div className="bg-[#F9F2D6] min-h-screen font-['Montserrat'] selection:bg-[#308667] selection:text-white">
-      
+
       {/* ================= HERO SECTION - SYNCED WITH PRODUCTS ================= */}
       <section className="relative bg-[#387663] pt-40 pb-56 overflow-hidden">
-        
+
         {/* LOCAL IMAGE PATTERN */}
-        <div 
-          className="absolute inset-0 opacity-10 pointer-events-none" 
-          style={{ 
+        <div
+          className="absolute inset-0 opacity-10 pointer-events-none"
+          style={{
             backgroundImage: `url(${bgPattern})`,
             backgroundSize: '150px 150px',
             backgroundRepeat: 'repeat'
           }}
         />
-        
+
         <div className="container mx-auto px-6 relative z-10 max-w-7xl">
           <Link to="/services" className="group text-[#09140F] font-black uppercase tracking-[0.4em] text-[10px] mb-12 inline-flex items-center hover:text-[#F9F2D6] transition-all">
-            <FaArrowLeft className="mr-3 group-hover:-translate-x-2 transition-transform" /> 
+            <FaArrowLeft className="mr-3 group-hover:-translate-x-2 transition-transform" />
             Back to Services
           </Link>
 
@@ -111,10 +111,10 @@ const ServiceDetail: React.FC = () => {
       {/* ================= CONTENT SECTION (UNTOUCHED) ================= */}
       <div className="container mx-auto px-6 py-24 max-w-7xl relative -mt-32 z-20">
         <div className="grid lg:grid-cols-3 gap-16">
-          
+
           {/* Main Content Area */}
           <div className="lg:col-span-2">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -127,10 +127,10 @@ const ServiceDetail: React.FC = () => {
             </motion.div>
 
             <h2 className="text-3xl font-black text-[#122C21] uppercase mb-12 tracking-tight">Scope of Work</h2>
-            
+
             <div className="space-y-12">
               {service.fullContent.map((paragraph: string, idx: number) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -145,7 +145,7 @@ const ServiceDetail: React.FC = () => {
                       <div className="absolute top-14 left-1/2 -translate-x-1/2 w-[2px] h-full bg-[#122C21]/5 group-hover:bg-[#308667]/20 transition-colors" />
                     )}
                   </div>
-                  
+
                   <p className="text-lg text-[#09140F]/80 font-medium leading-relaxed pb-12">
                     {paragraph}
                   </p>
@@ -164,7 +164,7 @@ const ServiceDetail: React.FC = () => {
               <p className="text-xl font-bold leading-relaxed mb-12 opacity-90 tracking-tight">
                 {service.outcome}
               </p>
-              
+
               <Link to="/contact">
                 <button className="w-full bg-[#308667] py-6 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-[#F9F2D6] hover:text-[#122C21] transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-3">
                   Partner With Us <FaChevronRight className="text-sm" />
