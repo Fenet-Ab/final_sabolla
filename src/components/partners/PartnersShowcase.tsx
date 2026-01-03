@@ -49,10 +49,7 @@ const PartnersShowcase: React.FC<PartnersShowcaseProps> = ({ partners }) => {
       
       {/* HEADER SECTION */}
       <div className="flex justify-between items-end mb-12 px-4">
-        <div>
-          <h2 className="text-[10px] font-black text-[#308667] uppercase tracking-[0.5em] mb-2">Network Protocol</h2>
-          <p className="text-3xl font-black text-[#122C21] uppercase tracking-tighter">Strategic Partners</p>
-        </div>
+        
         <button 
           onClick={() => setIsExpanded(!isExpanded)}
           className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#122C21] hover:text-[#308667] transition-all border-b-2 border-[#308667]/20 pb-1"

@@ -121,12 +121,12 @@ const Footer: React.FC = () => {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-medium uppercase tracking-wider text-[#F9F2D6]/40">
           <p>© {new Date().getFullYear()} Sabolla International Trading PLC. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link to="/privacy-terms/privacy" className="hover:text-[#308667] transition-colors">
+            {/* <Link to="/privacy-terms/privacy" className="hover:text-[#308667] transition-colors">
               Privacy Policy
             </Link>
             <Link to="/privacy-terms/terms" className="hover:text-[#308667] transition-colors">
               Terms & Conditions
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

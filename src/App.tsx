@@ -22,7 +22,6 @@ import ProductDetail from './pages/ProductDetail';
 import ServicesIndex from './pages/ServicesIndex';
 import ServiceDetail from './pages/ServiceDetail';
 import PartnersPage from './pages/Partners';
-import LegalPage from './pages/LegalPage'; 
 
 const App: React.FC = () => {
   return (
@@ -41,7 +40,6 @@ const App: React.FC = () => {
             <Route path="/services" element={<ServicesIndex />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/partners" element={<PartnersPage />} />
-            <Route path="/privacy-terms/:type" element={<LegalPage />} />
             <Route path="/privacy-terms" element={<Navigate to="/privacy-terms/terms" replace />} />
             
             {/* Catch-all route to handle 404s within React */}

@@ -2,7 +2,6 @@
 import type { ReactNode } from 'react';
 import ASI from '../assets/global_images/ASI.png'; 
 import FIRECHEM from '../assets/global_images/FIRECHEM.png'; 
-import indra from '../assets/global_images/indra.png'; 
 import JSHK from '../assets/global_images/JSHK.png'; 
 import leviathan from '../assets/global_images/leviathan.png'; 
 import meraj from '../assets/global_images/meraj.png'; 
@@ -34,14 +33,7 @@ export const PARTNERS: Partner[] = [
     website: "https://www.merajinternational.com/",
     icon: React.createElement('img', { src: meraj, alt: 'Meraj International', className: 'w-10 h-10 object-contain' }),
   },
-  {
-    name: "Indra Avitech GmbH",
-    description:
-      "Indra Avitech is a global leader in Aeronautical Information Systems, supporting safe aviation operations in over 60 countries. It serves as the Indra Group’s Center of Excellence for AIM, MHS, AIS, SWIM, and MET solutions.",
-    website:
-      "https://www.indracompany.com/en/aeronautical-information-solutions",
-    icon: React.createElement('img', { src: indra, alt: 'Indra Avitech', className: 'w-10 h-10 object-contain' }),
-  },
+
   {
     name: "Rosenbauer",
     description:
