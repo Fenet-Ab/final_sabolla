@@ -56,7 +56,7 @@ const ServicesIndex: React.FC = () => {
             className="max-w-4xl mx-auto"
           >
             <h1 className="text-5xl md:text-7xl font-black text-[#F9F2D6] mb-8 uppercase tracking-tighter leading-none">
-              Strategic <span className="text-[#09140F]">Trade</span>
+              Strategic <span className="text-[#0B1A13] ">Trade</span>
             </h1>
             <p className="text-lg md:text-xl text-[#F9F2D6]/70 font-bold italic inline-block pb-8">
               Maximizing profitability through 20 years of localized intelligence.

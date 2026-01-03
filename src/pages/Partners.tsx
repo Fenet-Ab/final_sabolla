@@ -10,33 +10,36 @@ import Topfooter from '../components/layout/Topfooter';
 
 const PartnersPage: React.FC = () => {
   return (
-    <div className="bg-[#FCFAF2] min-h-screen font-['Montserrat'] text-[#0B1A13] overflow-x-hidden">
-      
-      {/* ================= HERO SECTION (Matched to Home/About Style) ================= */}
-      <section className="relative pt-48 pb-24 overflow-hidden bg-[#cff4e4]">
-        {/* Decorative background accents matching Home Page */}
-        <div className="absolute top-0 right-0 w-1/4 h-full bg-[#0B1A13] hidden lg:block" />
-        <div className="absolute top-1/2 left-0 w-64 h-64 bg-[#308667]/10 rounded-full blur-[120px]" />
+    <div className="bg-[#F9F2D6] min-h-screen font-['Montserrat']">
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-[10px] font-black text-[#308667] uppercase tracking-[0.5em] block mb-6">
-                Global Network
-              </span>
-              <h1 className="text-5xl md:text-6xl lg:text-5xl font-black leading-[1.1] tracking-tighter uppercase mb-8">
-                Strategic <br />
-                <span className="text-[#308667]">Synergy & Partnerships</span>
-              </h1>
-              <p className="text-xl text-[#0B1A13]/70 max-w-2xl font-medium leading-relaxed mb-10">
-                We bridge the gap between world-class technology and Ethiopia's industrial landscape by representing the world's most innovative manufacturers.
-              </p>
-            </motion.div>
-          </div>
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative bg-[#122C21] pt-48 pb-32 overflow-hidden">
+        {/* Subtle Brand Pattern */}
+        <div
+          className="absolute inset-0 opacity-10 pointer-events-none"
+          style={{ backgroundImage: `url('/pattern.png')`, backgroundSize: '400px' }}
+        />
+
+        <div className="container mx-auto px-6 relative z-10 max-w-7xl text-center">
+
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-5xl md:text-7xl font-black text-[#F9F2D6] uppercase tracking-tighter leading-[0.85] mb-8"
+          >
+            Strategic   <span className="text-[#308667]">Synergy</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-lg md:text-2xl text-[#F9F2D6]/70 max-w-3xl mx-auto font-medium leading-relaxed"
+          >
+            We represent the world's most innovative manufacturers, ensuring Ethiopia has
+            seamless access to mission-critical technologies and industrial solutions.
+          </motion.p>
         </div>
       </section>
 
@@ -47,9 +50,10 @@ const PartnersPage: React.FC = () => {
             <h2 className="text-5xl md:text-7xl font-black text-[#122C21] uppercase tracking-tighter mb-6">
               Trusted <span className="text-[#308667]">Partners</span>
             </h2>
-            <p className="text-xl text-[#122C21]/60 max-w-2xl mx-auto font-medium">
-              We collaborate with globally recognized manufacturers and technology leaders
-              to deliver premium solutions into Ethiopia.
+            <div className="w-24 h-2 bg-[#308667] mx-auto mb-8 rounded-full" />
+            <p className="text-[#387663] max-w-2xl mx-auto text-lg font-medium">
+              A curated network of international leaders and local stakeholders driving
+              national progress across aviation, safety, and infrastructure.
             </p>
           </div>
 
@@ -77,8 +81,8 @@ const PartnersPage: React.FC = () => {
       {/* ================= TESTIMONIALS ================= */}
       {/* <TestimonialsSection /> */}
 
-     {/* ================= CALL TO ACTION ================= */}
-      <Topfooter/>
+      {/* ================= CALL TO ACTION ================= */}
+      <Topfooter />
     </div>
   );
 };

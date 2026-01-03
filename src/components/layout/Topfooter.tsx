@@ -37,7 +37,7 @@ const Topfooter = () => {
                         <motion.button
                             whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(47, 148, 111, 0.4)' }}
                             whileTap={{ scale: 0.95 }}
-                            className="inline-block px-12 py-5 text-sm font-black bg-[#122C21] text-white rounded-full transition-all duration-300 uppercase tracking-[0.2em] shadow-lg hover:bg-[#308667] hover:text-white"
+                            className="inline-block px-12 py-5 text-sm font-black bg-[#F9F2D6] text-[#122C21] rounded-full transition-all duration-300 uppercase tracking-[0.2em] shadow-lg hover:bg-[#308667] hover:text-white"
                         >
                             Contact Us
                         </motion.button>

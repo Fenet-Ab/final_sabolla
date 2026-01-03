@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from "react-router-dom";
 import { FaFingerprint, FaCompass, FaLightbulb, FaChevronRight } from "react-icons/fa";
+import Topfooter from '../components/layout/Topfooter';
 
 const VISION_MISSION_VALUES = [
   {
@@ -33,13 +34,13 @@ const AboutPage: React.FC = () => {
     // Main background set to a bright "Bone" color (#F4F5F0) 
     // This is bright but allows white nav-links to remain visible
     <div className="w-full min-h-screen bg-[#cff4e4] font-['Montserrat'] text-[#0B1A13] pt-48 overflow-x-hidden selection:bg-[#308667] selection:text-white">
-      
+
       {/* ================= HERO SECTION ================= */}
       <section className="relative pb-24 overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -51,19 +52,19 @@ const AboutPage: React.FC = () => {
                   Corporate Heritage
                 </span>
               </div>
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-[#0B1A13] leading-[1.1] uppercase tracking-tighter mb-8">
-               Who <span className="text-[#308667]"> We </span> 
+                Who <span className="text-[#308667]"> We </span>
                 Are
               </h1>
-              
+
               <p className="text-lg md:text-xl text-[#0B1A13] max-w-2xl font-bold leading-snug">
                 Sabolla International Trading plc is a leading foreign trade agency with over two decades
                 of experience connecting global businesses to Ethiopian markets.
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               className="lg:col-span-5 relative min-h-[450px]"
@@ -71,9 +72,9 @@ const AboutPage: React.FC = () => {
               {/* Decorative accent behind the image */}
               <div className="absolute inset-0 bg-[#308667] rounded-[3rem] translate-x-3 translate-y-3" />
               <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
+                <img
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   alt="Sabolla Professional Partnership"
                 />
               </div>
@@ -87,21 +88,21 @@ const AboutPage: React.FC = () => {
       <section className="py-24 bg-[#EBE9E0] border-y border-[#0B1A13]/5">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             {/* Left: Tab Selectors */}
             <div className="lg:col-span-4">
               <h2 className="text-3xl md:text-4xl font-black text-[#0B1A13] mb-10 uppercase tracking-tighter">
                 Core <span className="text-[#308667]">Foundations</span>
               </h2>
-              
+
               <div className="flex flex-col gap-3">
                 {VISION_MISSION_VALUES.map((item) => (
                   <button
                     key={item.key}
                     onClick={() => setActiveTab(item.key)}
                     className={`flex items-center justify-between p-6 rounded-2xl transition-all duration-300 text-left
-                      ${activeTab === item.key 
-                        ? 'bg-[#0B1A13] text-white shadow-xl translate-x-2' 
+                      ${activeTab === item.key
+                        ? 'bg-[#0B1A13] text-white shadow-xl translate-x-2'
                         : 'bg-[#cff4e4] text-[#0B1A13] hover:bg-[#308667]/10'}`}
                   >
                     <div className="flex items-center gap-4">
@@ -144,21 +145,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* ================= FINAL CALL TO ACTION ================= */}
-      <section className="py-32 bg-[#0B1A13] text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#308667_1px,transparent_1px)] [background-size:30px_30px]" />
-        
-        <div className="relative z-10 container mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-10 leading-none">
-            Ready to Expand <br/> <span className="text-[#308667]">Into Ethiopia?</span>
-          </h2>
-          <Link 
-            to="/contact" 
-            className="inline-block bg-[#308667] text-white font-black py-5 px-16 rounded-full text-[11px] uppercase tracking-[0.3em] hover:bg-white hover:text-[#0B1A13] transition-all duration-500 shadow-2xl"
-          >
-            Consult an Expert
-          </Link>
-        </div>
-      </section>
+      <Topfooter />
     </div>
   );
 };
