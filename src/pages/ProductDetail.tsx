@@ -6,55 +6,64 @@ import { FaArrowLeft } from 'react-icons/fa';
 // 1. IMPORT YOUR LOCAL ASSETS
 import bgPattern from "../assets/bg_pattern/image.png";
 import Topfooter from '../components/layout/Topfooter';
+import { fire, transportation, water } from '../assets/asset';
 
 const PRODUCT_DATA: Record<string, any> = {
   "aviation": {
     name: "Aviation",
     content: "We support the aviation sector with a comprehensive suite of critical communication, navigation, and information-management systems. Our portfolio includes VHF AM base stations, communication and navigation spare parts, AMHS systems, AIM systems, AIS systems, and other aviation-essential components. Each product is carefully sourced from trusted manufacturers, with detailed verification to ensure technical compliance with international aviation safety standards. Beyond procurement, we coordinate supplier engagement, manage import documentation, and oversee the certification process, ensuring that all equipment meets stringent regulatory and operational requirements.",
     lifecycle: "In addition to supply, we provide full lifecycle support, including installation guidance, maintenance follow-up, and operational troubleshooting. Our approach ensures that airports, airlines, and air traffic control authorities receive reliable, high-performance equipment that enhances safety, operational efficiency, and long-term sustainability. By integrating modern technologies with proven procurement practices, we contribute to the seamless operation of aviation networks and the overall safety of the airspace.",
-    offerings: ["VHF AM Base Stations", "AMHS & AIM Systems", "AIS Systems", "Navigation Spares"]
+    offerings: ["VHF AM Base Stations", "AMHS & AIM Systems", "AIS Systems", "Navigation Spares"],
+    image: "https://corporate.ethiopianairlines.com/images/default-source/corporate-image/600-x-400-px-aircraft-207559ff99f634e0eb3d4ef8ab0252e90.jpg?sfvrsn=6a41cd38_0"
   },
   "military": {
     name: "Military",
     content: "We deliver advanced communication and navigation technologies designed to meet the exacting standards of defense and military operations. Our services include sourcing verified equipment from specialized manufacturers, managing procurement workflows, coordinating international shipments, and ensuring full compliance with defense regulations. Each procurement process is structured to meet security requirements and operational confidentiality, ensuring that sensitive equipment is delivered securely and on time.",
     lifecycle: "Our support extends beyond delivery, including logistics planning, documentation management, and post-delivery coordination to maintain operational readiness. We work closely with military planners and technical teams to ensure equipment integration, reliability, and mission-critical performance. This approach allows defense institutions to focus on strategic objectives while relying on uninterrupted access to essential technologies.",
-    offerings: ["Tactical Communication", "Secure Navigation", "Defense Logistics", "Secure Sourcing"]
+    offerings: ["Tactical Communication", "Secure Navigation", "Defense Logistics", "Secure Sourcing"],
+    image: "https://images.unsplash.com/photo-1453683685760-b8db0bbb8dc2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1pbGl0YXJ5fGVufDB8fDB8fHww"
   },
   "fire-disaster": {
     name: "Fire & Disaster Risk",
     content: "Our disaster-response category encompasses an extensive range of firefighting and emergency-response equipment, including firefighting trucks, aerial ladder trucks, firefighting foam, and dry chemical powders. We manage supplier engagement, import and export procedures, technical assessment, and delivery logistics to ensure agencies receive fully functional, ready-to-deploy equipment. Every item is vetted for quality, durability, and compliance with international firefighting and safety standards.",
     lifecycle: "Beyond supply, we provide operational support and advisory services to integrate new equipment into existing emergency-response frameworks. This includes technical training, coordination with municipal and industrial teams, and ensuring compliance with local safety regulations. Our holistic approach helps fire departments, airports, industrial facilities, and emergency agencies respond efficiently and effectively to crises, minimizing risks and safeguarding lives and property.",
-    offerings: ["Firefighting Trucks", "Aerial Ladders", "Specialized Foams", "Dry Chemical Powders"]
+    offerings: ["Firefighting Trucks", "Aerial Ladders", "Specialized Foams", "Dry Chemical Powders"],
+    image: fire
   },
   "safety-security": {
     name: "Safety & Security",
     content: "We provide specialized protective gear designed for high-risk and industrial environments. Our offerings include firefighting clothing, breathing apparatus, aluminized suits, and full diving suits suitable for rescue operations, firefighting, marine services, and industrial safety applications. Each product undergoes strict verification for material quality, international safety certification, and manufacturing compliance to guarantee reliability under extreme conditions.",
     lifecycle: "Our services include full logistics management, regulatory clearance, and after-sales support to ensure timely delivery and usability. By working closely with organizations, we ensure that personnel have access to gear that meets occupational health and safety standards. This reduces workplace risks, enhances performance, and provides confidence to teams operating in hazardous conditions, enabling safer, more effective operations.",
-    offerings: ["Breathing Apparatus", "Aluminized Suits", "Full Diving Gear", "Firefighting Clothing"]
+    offerings: ["Breathing Apparatus", "Aluminized Suits", "Full Diving Gear", "Firefighting Clothing"],
+    image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=800"
   },
   "agriculture": {
     name: "Agricultural Products",
     content: "We supply a wide array of agricultural inputs, including food-grade hermetic bags, jute bags, and other storage and post-harvest protection materials. Our procurement process emphasizes supplier verification, quality inspection, and timely coordination of inland distribution to ensure that farmers and agribusinesses have consistent access to essential materials.",
     lifecycle: "We also provide technical guidance and collaboration with cooperatives and agricultural stakeholders to implement effective storage systems and reduce post-harvest losses. By supporting storage efficiency, product quality, and commodity preservation, we help strengthen supply chains and improve the sustainability and profitability of agricultural operations.",
-    offerings: ["Hermetic Bags", "Jute Storage", "Technical Guidance", "Distribution Logistics"]
+    offerings: ["Hermetic Bags", "Jute Storage", "Technical Guidance", "Distribution Logistics"],
+    image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=800"
   },
   "water-sewerage": {
     name: "Water & Sewerage",
     content: "We support the water and sanitation sector by supplying sewerage trucks, jetting trucks, water meters, pumps, and related infrastructure equipment. Our team manages sourcing from reputable manufacturers, coordinates export and import procedures, and provides local market support to ensure that products meet technical and operational requirements.",
     lifecycle: "Additionally, we assist utilities and engineering firms in deploying water and sewerage solutions efficiently. By ensuring timely equipment delivery, providing operational guidance, and maintaining high-quality standards, we enable improved urban service delivery and sustainable water management systems, enhancing overall infrastructure performance.",
-    offerings: ["Sewerage Trucks", "Jetting Trucks", "Water Meters", "Industrial Pumps"]
+    offerings: ["Sewerage Trucks", "Jetting Trucks", "Water Meters", "Industrial Pumps"],
+    image: water
   },
   "power-energy": {
     name: "Power & Energy",
     content: "We provide an extensive range of power-sector equipment, including electric meters, generators, transformers, network cables, and other electrical infrastructure components. Our end-to-end support covers sourcing, specification verification, compliance guidance, and logistics management to ensure products meet relevant technical and regulatory standards.",
     lifecycle: "Our involvement extends to assisting partners with planning, installation coordination, and post-delivery support, ensuring equipment functions efficiently in real-world operations. By delivering reliable and compliant power solutions, we help public and private sector clients implement safe, efficient, and scalable energy systems that drive industrial growth and community development.",
-    offerings: ["Electric Meters", "Industrial Generators", "Transformers", "Network Cables"]
+    offerings: ["Electric Meters", "Industrial Generators", "Transformers", "Network Cables"],
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800"
   },
   "transportation": {
     name: "Transport & Storage",
     content: "Our transportation and storage solutions cover freight containers, reachstackers, forklifts, and specialized tires for trucks, heavy machinery, and industrial vehicles. We provide full supply-chain support, including supplier identification, procurement management, shipping coordination, customs clearance, and final delivery.",
     lifecycle: "We also advise clients on equipment suitability and integration to optimize warehouse operations and cargo handling efficiency. By ensuring timely, reliable, and cost-effective supply, we help logistics companies, manufacturers, and government agencies maintain uninterrupted operations, streamline storage management, and enhance the overall efficiency of transportation networks.",
-    offerings: ["Freight Containers", "Reachstackers", "Industrial Forklifts", "Specialized Tires"]
+    offerings: ["Freight Containers", "Reachstackers", "Industrial Forklifts", "Specialized Tires"],
+    image: transportation
   }
 };
 
@@ -68,20 +77,34 @@ const ProductDetail: React.FC = () => {
   const prevSlug = productKeys[(currentIndex - 1 + productKeys.length) % productKeys.length];
 
   return (
-    <div className="bg-[#F9F2D6] min-h-screen font-['Montserrat'] selection:bg-[#308667] selection:text-white">
+    <div className="bg-white min-h-screen font-['Montserrat'] selection:bg-[#308667] selection:text-white">
 
       {/* ================= HERO ================= */}
-      <section className="relative bg-[#387663] pt-40 pb-56 overflow-hidden">
+      <section className="relative bg-[#387663] pt-40 pb-32 overflow-hidden">
+        {/* Dynamic Background with Overlay */}
         <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${product.image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          {/* Dark overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-[#387663]/90 mix-blend-multiply" />
+        </div>
+
+        {/* Pattern Overlay */}
+        <div
+          className="absolute inset-0 opacity-5 pointer-events-none z-0"
           style={{ backgroundImage: `url(${bgPattern})`, backgroundSize: '150px 150px' }}
         />
 
         <div className="container mx-auto px-6 relative z-10 text-center pb-12">
           <div className="md:absolute md:left-6 md:bottom-12 md:mb-0 mb-8 flex justify-center md:block">
-            <Link to="/products" className="group inline-flex items-center gap-3 text-[#09140F] font-black uppercase tracking-[0.4em] text-[10px] hover:text-[#F9F2D6] transition-all">
+            <Link to="/products" className="group inline-flex items-center gap-3 text-white font-black uppercase tracking-[0.4em] text-[10px] hover:text-[#F9F2D6] transition-all">
               <FaArrowLeft className="group-hover:-translate-x-2 transition-transform" />
-              Back to Commodities
+              Back
             </Link>
           </div>
 
@@ -92,11 +115,11 @@ const ProductDetail: React.FC = () => {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-[#F9F2D6]" style={{ clipPath: 'polygon(0 100%, 100% 100%, 0 0)' }}></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-white" style={{ clipPath: 'polygon(0 100%, 100% 100%, 0 0)' }}></div>
       </section>
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="container mx-auto px-6 py-24 max-w-6xl relative -mt-40 z-20">
+      <div className="container mx-auto px-6 py-12 max-w-6xl relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

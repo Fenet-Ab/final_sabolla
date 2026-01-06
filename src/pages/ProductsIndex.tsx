@@ -6,6 +6,7 @@ import { FaArrowRight } from 'react-icons/fa';
 // IMPORT LOCAL ASSET
 import bgPattern from "../assets/bg_pattern/image.png";
 import Topfooter from '../components/layout/Topfooter';
+import { fire, transportation, water } from '../assets/asset';
 
 const PRODUCT_CATEGORIES = [
   {
@@ -24,7 +25,8 @@ const PRODUCT_CATEGORIES = [
     name: "Fire & Disaster Risk",
     slug: "fire-disaster",
     desc: "Extensive range of firefighting trucks, aerial ladders, and emergency-response equipment.",
-    image: "https://images.unsplash.com/photo-1516533075015-a3838414c3ca?auto=format&fit=crop&q=80&w=800"
+    image: fire
+    //  "https://images.unsplash.com/photo-1516533075015-a3838414c3ca?auto=format&fit=crop&q=80&w=800"
   },
   {
     name: "Safety & Security",
@@ -42,7 +44,8 @@ const PRODUCT_CATEGORIES = [
     name: "Water & Sewerage",
     slug: "water-sewerage",
     desc: "Infrastructure equipment including jetting trucks, water meters, and urban sanitation pumps.",
-    image: "https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&q=80&w=800"
+    image: water
+    // "https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&q=80&w=800"
   },
   {
     name: "Power & Energy",
@@ -54,7 +57,8 @@ const PRODUCT_CATEGORIES = [
     name: "Transportation & Storage",
     slug: "transportation",
     desc: "Heavy machinery, reachstackers, specialized tires, and global logistics storage solutions.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+    image: transportation
+    // "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
   }
 ];
 

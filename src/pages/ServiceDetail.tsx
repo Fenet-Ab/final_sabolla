@@ -6,28 +6,33 @@ import { FaArrowLeft } from 'react-icons/fa';
 // 1. IMPORT YOUR LOCAL ASSET
 import bgPattern from "../assets/bg_pattern/image.png";
 import Topfooter from '../components/layout/Topfooter';
+import { advisory, sourcing } from '../assets/asset';
 
 // --- SERVICE DATA (EXTRACTED FROM UPLOADED IMAGES) ---
 const DETAILED_SERVICES: Record<string, any> = {
   "advisory": {
     name: "Advisory and Consultancy",
     intro: "We offer high-value advisory and consultancy services to guide international companies through Ethiopia’s complex legal, regulatory, and commercial landscape. Our team helps clients navigate import rules, sector-specific compliance standards, and local operational requirements, ensuring that every business decision aligns with regulatory frameworks. We actively identify investment opportunities, public tenders, and market entry options, delivering detailed sector analyses that include political, economic, and operational risk assessments.",
-    outcome: "Our support extends across the entire project lifecycle, from initial market entry strategy to contract negotiation, project development, and execution. We advise clients on business positioning, pricing strategies, and operational planning while continuously monitoring risks and providing mitigation strategies. By offering real-time guidance and tailored consulting, we enable international partners to make informed, strategic decisions that maximize profitability, reduce exposure, and foster long-term sustainable growth in the Ethiopian market."
+    outcome: "Our support extends across the entire project lifecycle, from initial market entry strategy to contract negotiation, project development, and execution. We advise clients on business positioning, pricing strategies, and operational planning while continuously monitoring risks and providing mitigation strategies. By offering real-time guidance and tailored consulting, we enable international partners to make informed, strategic decisions that maximize profitability, reduce exposure, and foster long-term sustainable growth in the Ethiopian market.",
+    image: advisory
   },
   "market-assessments": {
     name: "Local Market Assessments",
     intro: "Sabolla conducts comprehensive local market assessments to provide international partners with a clear understanding of Ethiopia’s dynamic business environment. Using extensive local networks, field intelligence, and data analytics, we evaluate customer preferences, demand patterns, competitor activity, and emerging trends. Our studies identify potential buyers, distributors, and strategic project partners while monitoring government procurement pipelines, donor-funded projects, and sector-specific opportunities.",
-    outcome: "In addition to quantitative research, we conduct field surveys, in-person interviews, and on-site validation to ensure the accuracy and reliability of our findings. Our ongoing market intelligence reports keep partners updated on shifts in consumer behavior, competitive moves, and regulatory developments, enabling them to adapt strategies proactively. This thorough, evidence-based approach helps international businesses reduce uncertainty, increase market penetration, and optimize operational effectiveness."
+    outcome: "In addition to quantitative research, we conduct field surveys, in-person interviews, and on-site validation to ensure the accuracy and reliability of our findings. Our ongoing market intelligence reports keep partners updated on shifts in consumer behavior, competitive moves, and regulatory developments, enabling them to adapt strategies proactively. This thorough, evidence-based approach helps international businesses reduce uncertainty, increase market penetration, and optimize operational effectiveness.",
+    image: "https://www.shutterstock.com/image-photo/business-2025-graphs-statistics-analyze-600nw-2469749585.jpg"
   },
   "import-export": {
     name: "Import and Export",
     intro: "We provide end-to-end support for import and export processes, ensuring smooth, compliant, and efficient movement of goods. Our team manages all aspects of regulatory compliance, including certifications, permits, quality standards, and documentation such as invoices, packing lists, certificates of origin, and pre-shipment inspections. We coordinate closely with customs authorities, shipping agents, and freight forwarders to streamline operations and minimize procedural delays.",
-    outcome: "Our services also cover logistics management, transportation planning, and monitoring of exports from Ethiopia to global markets. We handle risk assessment, tracking, and coordination with stakeholders to ensure timely delivery and minimize disruptions. By managing regulatory requirements and operational logistics proactively, we allow international partners to focus on market growth with confidence that their supply chain is fully optimized."
+    outcome: "Our services also cover logistics management, transportation planning, and monitoring of exports from Ethiopia to global markets. We handle risk assessment, tracking, and coordination with stakeholders to ensure timely delivery and minimize disruptions. By managing regulatory requirements and operational logistics proactively, we allow international partners to focus on market growth with confidence that their supply chain is fully optimized.",
+    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800"
   },
   "sourcing": {
     name: "Sourcing & Supply Chain",
     intro: "SABOLLA offers full-spectrum sourcing and supply chain management services tailored to both international and domestic clients. We identify reliable suppliers, conduct rigorous verification, negotiate pricing and agreements, and supervise procurement processes from start to finish. Our team monitors production quality, adherence to specifications, and compliance with industry standards, ensuring that all sourced products meet required benchmarks.",
-    outcome: "We also manage all aspects of local logistics, warehousing, and inland transportation, ensuring timely and secure delivery. Continuous risk assessment of supply chain operations including market fluctuations, production delays, and operational challenges ensures proactive mitigation. By maintaining ethical practices, transparency, and cost-efficiency, we provide partners with reliable, high-quality products while protecting commercial interests."
+    outcome: "We also manage all aspects of local logistics, warehousing, and inland transportation, ensuring timely and secure delivery. Continuous risk assessment of supply chain operations including market fluctuations, production delays, and operational challenges ensures proactive mitigation. By maintaining ethical practices, transparency, and cost-efficiency, we provide partners with reliable, high-quality products while protecting commercial interests.",
+    image: sourcing
   }
 };
 
@@ -41,20 +46,34 @@ const ServiceDetail: React.FC = () => {
   const prevSlug = serviceKeys[(currentIndex - 1 + serviceKeys.length) % serviceKeys.length];
 
   return (
-    <div className="bg-[#F9F2D6] min-h-screen font-['Montserrat'] selection:bg-[#308667] selection:text-white">
+    <div className="bg-white min-h-screen font-['Montserrat'] selection:bg-[#308667] selection:text-white">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative bg-[#387663] pt-40 pb-56 overflow-hidden">
+      <section className="relative bg-[#387663] pt-40 pb-32 overflow-hidden">
+        {/* Dynamic Background with Overlay */}
         <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${service.image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          {/* Dark overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-[#387663]/90 mix-blend-multiply" />
+        </div>
+
+        {/* Pattern Overlay (Optional - kept for texture if desired, slightly reduced opacity) */}
+        <div
+          className="absolute inset-0 opacity-5 pointer-events-none z-0"
           style={{ backgroundImage: `url(${bgPattern})`, backgroundSize: '150px 150px' }}
         />
 
         <div className="container mx-auto px-6 relative z-10 text-center pb-12">
-          <div className="md:absolute md:left-6 md:bottom-12 md:mb-0 mb-8 flex justify-center md:block">
-            <Link to="/services" className="group inline-flex items-center gap-3 text-[#09140F] font-black uppercase tracking-[0.4em] text-[10px] hover:text-[#F9F2D6] transition-all no-underline">
+          <div className="lg:absolute lg:left-6 lg:bottom-12 lg:mb-0 mb-8 flex justify-center lg:block">
+            <Link to="/services" className="group inline-flex items-center gap-3 text-white font-black uppercase tracking-[0.4em] text-[10px] hover:text-[#F9F2D6] transition-all no-underline">
               <FaArrowLeft className="group-hover:-translate-x-2 transition-transform" />
-              Back to Services
+              Back
             </Link>
           </div>
 
@@ -65,11 +84,11 @@ const ServiceDetail: React.FC = () => {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-[#F9F2D6]" style={{ clipPath: 'polygon(0 100%, 100% 100%, 0 0)' }}></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-white" style={{ clipPath: 'polygon(0 100%, 100% 100%, 0 0)' }}></div>
       </section>
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="container mx-auto px-6 py-24 max-w-6xl relative -mt-40 z-20">
+      <div className="container mx-auto px-6 py-12 max-w-6xl relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
