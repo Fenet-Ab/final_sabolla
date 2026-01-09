@@ -121,7 +121,7 @@ const Home: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="w-full lg:w-[55%]">
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <h1 className="text-4xl md:text-5xl lg:text-[2.5 rem] xl:text-6xl font-black leading-[1.1] tracking-tighter uppercase mb-6">
+                <h1 className="text-4xl md:text-4.5xl lg:text-[2.5 rem] xl:text-5xl font-black leading-[1.1] tracking-tighter uppercase mb-6">
                   Your <br />
                   <div className="relative inline-block w-full min-h-[1.2em]">
                     <AnimatePresence mode="wait">
