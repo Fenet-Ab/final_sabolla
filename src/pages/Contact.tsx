@@ -14,7 +14,7 @@ const ContactPage: React.FC = () => {
     <div className="bg-[#F9F2D6] min-h-screen font-['Montserrat'] selection:bg-[#308667] selection:text-white">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative bg-[#122C21] pt-48 pb-40 overflow-hidden">
+      <section className="relative bg-[#cff4e4] pt-48 pb-40 overflow-hidden">
         {/* Decorative Background Pattern */}
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
@@ -29,10 +29,10 @@ const ContactPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-6xl md:text-8xl font-black text-[#F9F2D6] uppercase tracking-tighter leading-[0.85] mb-8">
+            <h1 className="text-6xl md:text-8xl font-black text-[#122C21] uppercase tracking-tighter leading-[0.85] mb-8">
               Get In <span className="text-[#308667] italic">Touch</span>
             </h1>
-            <p className="text-[#F9F2D6]/80 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+            <p className="text-[#122C21]/60 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
               Partner with Ethiopia's leading industrial intelligence firm.
               Our experts are ready to facilitate your next strategic move.
             </p>

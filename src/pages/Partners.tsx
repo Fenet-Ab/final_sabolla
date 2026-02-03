@@ -13,7 +13,7 @@ const PartnersPage: React.FC = () => {
     <div className="bg-[#F9F2D6] min-h-screen font-['Montserrat']">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative bg-[#122C21] pt-48 pb-32 overflow-hidden">
+      <section className="relative bg-[#cff4e4] pt-48 pb-32 overflow-hidden">
         {/* Subtle Brand Pattern */}
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
@@ -27,7 +27,7 @@ const PartnersPage: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-7xl font-black text-[#F9F2D6] uppercase tracking-tighter leading-[0.85] mb-8"
+            className="text-5xl md:text-7xl font-black text-[#122C21] uppercase tracking-tighter leading-[0.85] mb-8"
           >
             Strategic   <span className="text-[#308667]">Synergy</span>
           </motion.h1>
@@ -35,7 +35,7 @@ const PartnersPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-lg md:text-2xl text-[#F9F2D6]/70 max-w-3xl mx-auto font-medium leading-relaxed"
+            className="text-lg md:text-2xl text-[#122C21]/60 max-w-3xl mx-auto font-medium leading-relaxed"
           >
             We represent the world's most innovative manufacturers, ensuring Ethiopia has
             seamless access to mission-critical technologies and industrial solutions.

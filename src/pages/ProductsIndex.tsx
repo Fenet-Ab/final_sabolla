@@ -67,7 +67,7 @@ const ProductsIndex: React.FC = () => {
     <div className="min-h-screen bg-[#F9F2D6] font-['Montserrat'] selection:bg-[#308667] selection:text-white">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative bg-[#387663] pt-40 pb-56 overflow-hidden">
+      <section className="relative bg-[#cff4e4] pt-40 pb-56 overflow-hidden">
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
@@ -82,10 +82,10 @@ const ProductsIndex: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl md:text-7xl lg:text-5xl xl:text-6xl font-black text-[#F9F2D6] mb-8 uppercase tracking-tighter leading-none">
-              Managed <span className="text-[#0B1A13]">Commodities</span>
+            <h1 className="text-4xl md:text-7xl lg:text-5xl xl:text-6xl font-black text-[#122C21] mb-8 uppercase tracking-tighter leading-none">
+              Managed <span className="text-[#308667]">Commodities</span>
             </h1>
-            <p className="text-xl md:text-2xl text-[#F9F2D6]/50 max-w-4xl mx-auto font-bold italic pb-12 inline-block">
+            <p className="text-xl md:text-2xl text-[#122C21]/60 max-w-4xl mx-auto font-bold italic pb-12 inline-block">
               Facilitating global excellence across Ethiopia's eight primary industrial pillars.
             </p>
           </motion.div>
