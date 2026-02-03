@@ -2,9 +2,6 @@ import * as React from 'react';
 import { Link } from "react-router-dom";
 import {
   FaLinkedin,
-  FaTwitter,
-  FaFacebookF,
-  FaInstagram,
   FaEnvelope,
   FaPhoneAlt,
   FaMapMarkerAlt,
@@ -50,7 +47,7 @@ const Footer: React.FC = () => {
               Ethiopia's growing market through expert trade representation and logistics.
             </p>
             <div className="flex gap-4">
-              {[FaLinkedin, FaTwitter, FaFacebookF, FaInstagram].map((Icon, idx) => (
+              {[FaLinkedin].map((Icon, idx) => (
                 <a key={idx} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#308667] transition-all text-white border border-white/10 hover:border-[#308667] group">
                   <Icon size={16} className="group-hover:scale-110 transition-transform" />
                 </a>
