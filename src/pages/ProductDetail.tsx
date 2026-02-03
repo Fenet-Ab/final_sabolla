@@ -6,7 +6,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 // 1. IMPORT YOUR LOCAL ASSETS
 import bgPattern from "../assets/bg_pattern/image.png";
 import Topfooter from '../components/layout/Topfooter';
-import { fire, transportation, water } from '../assets/asset';
+import { fire, military, safety, transportation, water } from '../assets/asset';
 
 const PRODUCT_DATA: Record<string, any> = {
   "aviation": {
@@ -21,7 +21,7 @@ const PRODUCT_DATA: Record<string, any> = {
     content: "We deliver advanced communication and navigation technologies designed to meet the exacting standards of defense and military operations. Our services include sourcing verified equipment from specialized manufacturers, managing procurement workflows, coordinating international shipments, and ensuring full compliance with defense regulations. Each procurement process is structured to meet security requirements and operational confidentiality, ensuring that sensitive equipment is delivered securely and on time.",
     lifecycle: "Our support extends beyond delivery, including logistics planning, documentation management, and post-delivery coordination to maintain operational readiness. We work closely with military planners and technical teams to ensure equipment integration, reliability, and mission-critical performance. This approach allows defense institutions to focus on strategic objectives while relying on uninterrupted access to essential technologies.",
     offerings: ["Tactical Communication", "Secure Navigation", "Defense Logistics", "Secure Sourcing"],
-    image: "https://images.unsplash.com/photo-1453683685760-b8db0bbb8dc2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1pbGl0YXJ5fGVufDB8fDB8fHww"
+    image: military
   },
   "fire-disaster": {
     name: "Fire & Disaster Risk",
@@ -35,7 +35,7 @@ const PRODUCT_DATA: Record<string, any> = {
     content: "We provide specialized protective gear designed for high-risk and industrial environments. Our offerings include firefighting clothing, breathing apparatus, aluminized suits, and full diving suits suitable for rescue operations, firefighting, marine services, and industrial safety applications. Each product undergoes strict verification for material quality, international safety certification, and manufacturing compliance to guarantee reliability under extreme conditions.",
     lifecycle: "Our services include full logistics management, regulatory clearance, and after-sales support to ensure timely delivery and usability. By working closely with organizations, we ensure that personnel have access to gear that meets occupational health and safety standards. This reduces workplace risks, enhances performance, and provides confidence to teams operating in hazardous conditions, enabling safer, more effective operations.",
     offerings: ["Breathing Apparatus", "Aluminized Suits", "Full Diving Gear", "Firefighting Clothing"],
-    image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=800"
+    image: safety
   },
   "agriculture": {
     name: "Agricultural Products",

@@ -40,7 +40,7 @@ const ServicesIndex: React.FC = () => {
     <div className="min-h-screen bg-[#F9F2D6] font-['Montserrat'] selection:bg-[#308667] selection:text-white">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative bg-[#387663] pt-40 pb-20 overflow-hidden">
+      <section className="relative bg-[#cff4e4] pt-40 pb-20 overflow-hidden">
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
@@ -56,10 +56,10 @@ const ServicesIndex: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-7xl lg:text-5xl xl:text-6xl font-black text-[#F9F2D6] mb-8 uppercase tracking-tighter leading-none">
-              Strategic <span className="text-[#0B1A13] ">Trade</span>
+            <h1 className="text-4xl md:text-7xl lg:text-5xl xl:text-6xl font-black text-[#122C21] mb-8 uppercase tracking-tighter leading-none">
+              Strategic <span className="text-[#308667] ">Trade</span>
             </h1>
-            <p className="text-lg md:text-xl text-[#F9F2D6]/70 font-bold italic inline-block pb-8">
+            <p className="text-lg md:text-xl text-[#122C21]/60 font-bold italic inline-block pb-8">
               Maximizing profitability through 20 years of localized intelligence.
             </p>
           </motion.div>
@@ -70,7 +70,7 @@ const ServicesIndex: React.FC = () => {
 
       {/* ================= SERVICES GRID ================= */}
       <section className="pb-32 container mx-auto px-6 max-w-7xl relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES_LIST.map((service, index) => (
             <motion.div
               key={index}

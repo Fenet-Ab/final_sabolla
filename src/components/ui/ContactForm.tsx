@@ -73,7 +73,7 @@ const ContactForm: React.FC = () => {
         </label>
         <input
           type="email" name="email" id="email" required
-          placeholder="partnerships@company.com"
+          placeholder="contact@sabolla.com"
           value={formData.email} onChange={handleChange}
           className={inputClasses}
         />
