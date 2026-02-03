@@ -16,7 +16,7 @@ import { LOCAL_PARTNERS } from "../data/localPartners";
 import TestimonialsSection from "../components/sections/TestimonialsSection";
 import Topfooter from '../components/layout/Topfooter';
 import { award } from '../assets/asset'; // Importing your asset
-import SabollaPattern from '../components/ui/SabollaPattern';
+import sabollaLogoIcon from '../assets/logo/sabolla_logo_icon.png';
 
 const Counter = ({ value, duration = 2 }: { value: number; duration?: number }) => {
   const [count, setCount] = React.useState(0);
@@ -50,7 +50,7 @@ const useScrollParallax = (speed: number) => {
 };
 
 const Home: React.FC = () => {
-  const dynamicTexts = ["Gateway to Growth", "Trade Representation", "Market Solutions", "Strategic Pathway"];
+  const dynamicTexts = ["Gateway ", "Official Trade Representation", "Market Entry Solution", "Trade Facilitation and Compliance Pathway"];
   const [textIndex, setTextIndex] = React.useState(0);
 
   React.useEffect(() => {
@@ -58,7 +58,6 @@ const Home: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Motion values for 3D tilt and spotlight glow
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -87,7 +86,6 @@ const Home: React.FC = () => {
 
       {/* ================= HERO SECTION ================= */}
       <section className="relative min-h-screen flex items-center pt-32 md:pt-40 bg-white overflow-hidden">
-        {/* Parallax Background Text */}
         <motion.div
           style={{ y: useScrollParallax(0.2) }}
           className="absolute top-24 left-4 md:left-10 text-[5rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-black text-gray-100/80 select-none z-0 tracking-tighter opacity-100"
@@ -95,7 +93,6 @@ const Home: React.FC = () => {
           SABOLLA
         </motion.div>
 
-        {/* Ambient Floating Orbs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <motion.div
             animate={{
@@ -121,39 +118,44 @@ const Home: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="w-full lg:w-[55%]">
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <h1 className="text-4xl md:text-4.5xl lg:text-[2.5 rem] xl:text-5xl font-black leading-[1.1] tracking-tighter uppercase mb-6">
-                  Your <br />
-                  <div className="relative inline-block w-full min-h-[1.2em]">
+                {/* Responsive text sizes adjusted via standard breakpoints without changing content */}
+                <h1 className="flex flex-col gap-y-2 text-2xl sm:text-3xl md:text-4xl font-black leading-none tracking-tighter uppercase mb-8">
+                  <span className="block">Your</span>
+
+                  <div className="relative inline-block py-1">
                     <AnimatePresence mode="wait">
-                      <motion.span
+                      <motion.div
                         key={dynamicTexts[textIndex]}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 20 }}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.5 }}
-                        className="text-[#308667] absolute left-0 whitespace-nowrap"
+                        className="text-[#308667] text-left leading-[1.1] break-words max-w-full"
                       >
                         {dynamicTexts[textIndex]}
-                      </motion.span>
+                      </motion.div>
                     </AnimatePresence>
                   </div>
-                  <br /> to Ethiopia.
+
+                  <span className="block">to Ethiopia.</span>
                 </h1>
                 <p className="text-lg md:text-xl text-[#0B1A13]/70 max-w-xl font-medium leading-relaxed mb-8">
                   Navigating the complexities of East African trade. We bridge the gap between world-class technology and Ethiopia's industrial landscape.
                 </p>
-                <div className="flex flex-wrap gap-4 md:gap-6">
-                  <Link to="/services" className="group flex items-center gap-4 bg-[#0B1A13] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-[#308667] transition-all duration-300 shadow-xl">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6">
+                  <Link to="/services" className="group flex items-center justify-center gap-4 bg-[#0B1A13] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-[#308667] transition-all duration-300 shadow-xl">
                     Our Services <FaArrowRight className="group-hover:translate-x-2 transition-transform" />
                   </Link>
-                  <Link to="/contact" className="group flex items-center gap-4 border-2 border-[#0B1A13] text-[#0B1A13] px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-[#0B1A13] hover:text-white transition-all duration-300">
+                  <Link to="/contact" className="group flex items-center justify-center gap-4 border-2 border-[#0B1A13] text-[#0B1A13] px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-[#0B1A13] hover:text-white transition-all duration-300">
                     Get in Touch
                   </Link>
                 </div>
               </motion.div>
             </div>
+
+            {/* Globe responsiveness: ensure height and width scale appropriately on tablet/mobile */}
             <div
-              className="w-full lg:w-[45%] relative flex justify-center lg:justify-end items-center h-[350px] md:h-[500px] lg:h-[min(700px,80vh)]"
+              className="w-full lg:w-[45%] relative flex justify-center items-center h-[350px] md:h-[500px] lg:h-[min(700px,80vh)]"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
             >
@@ -166,9 +168,7 @@ const Home: React.FC = () => {
               >
                 <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[min(420px,60vh)] lg:h-[min(420px,60vh)] flex items-center justify-center">
 
-                  {/* Main Glassmorphic Central Unit */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/100 to-white/60 backdrop-blur-3xl rounded-full shadow-[0_50px_100px_rgba(48,134,103,0.1)] border border-gray-100 z-0 overflow-hidden">
-                    {/* Interactive Spotlight Glow */}
                     <motion.div
                       style={{
                         left: spotlightX,
@@ -180,32 +180,39 @@ const Home: React.FC = () => {
                     />
                   </div>
 
-                  {/* World Map Texture */}
                   <div className="absolute inset-0 opacity-[0.08] bg-[url('https://www.transparenttextures.com/patterns/world-map.png')] bg-center bg-no-repeat bg-contain rounded-full" />
 
-                  {/* Sabolla Pattern - Enhanced Centering and Scale with Color Transition */}
                   <motion.div
                     whileHover={{
                       scale: 1.15,
                       rotate: 5,
-                      filter: "drop-shadow(0 0 30px rgba(48,134,103,0.3))"
+                      filter: "drop-shadow(0 0 30px rgba(48,134,103,0.5))"
                     }}
                     animate={{
-                      color: ["rgba(48, 134, 103, 0.4)", "rgba(48, 134, 103, 1)"],
+                      opacity: [0.7, 1, 0.7],
+                      filter: [
+                        "brightness(1) drop-shadow(0 0 10px rgba(48,134,103,0.2))",
+                        "brightness(1.2) drop-shadow(0 0 25px rgba(48,134,103,0.4))",
+                        "brightness(1) drop-shadow(0 0 10px rgba(48,134,103,0.2))"
+                      ]
                     }}
                     transition={{
                       scale: { type: "spring", stiffness: 400, damping: 10 },
-                      color: { duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
-                      rotate: { type: "spring", stiffness: 200 }
+                      rotate: { type: "spring", stiffness: 200 },
+                      opacity: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                      filter: { duration: 3, repeat: Infinity, ease: "easeInOut" }
                     }}
-                    className="relative z-20 w-1/2 h-1/2 flex items-center justify-center cursor-default transition-all duration-300"
+                    className="relative z-20 w-1/2 h-1/2 flex items-center justify-center cursor-default"
                   >
-                    <SabollaPattern className="w-full h-full select-none animate-pulse" />
+                    <img
+                      src={sabollaLogoIcon}
+                      alt="Sabolla Logo Icon"
+                      className="w-full h-full object-contain select-none"
+                      draggable="false"
+                    />
                   </motion.div>
 
-                  {/* Complex SVG Ring System */}
                   <div className="absolute inset-0 z-0">
-                    {/* Main Rotating Pulse Ring - High Visibility */}
                     <motion.div
                       animate={{ rotate: 360 }}
                       whileHover={{ scale: 1.1 }}
@@ -238,18 +245,18 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ================= MILESTONES (Synchronized Bento Box Grid) ================= */}
+      {/* ================= MILESTONES ================= */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 max-w-7xl"> {/* Increased max-width for better PC spacing */}
+        <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-fr">
 
-            {/* 1. LARGE AWARD CARD */}
+            {/* Award Card - Responsive adjust for mobile stacking */}
             <div className="md:col-span-7 bg-[#05110B] rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden shadow-lg border border-white/5 group flex flex-col md:flex-row items-center gap-8">
               <div className="relative z-10 flex-1 flex flex-col justify-center">
                 <div className="w-12 h-12 rounded-2xl bg-[#308667] flex items-center justify-center mb-10 shadow-[0_0_20px_rgba(48,134,103,0.4)]">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 16H6V4h12zM8 7h8v2H8zm0 4h8v2H8zm0 4h5v2H8z" /></svg>
                 </div>
-                <h4 className="text-3xl md:text-4xl font-black text-white leading-tight uppercase tracking-tight mb-6">
+                <h4 className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight uppercase tracking-tight mb-6">
                   Winner of <br />
                   <span className="text-[#308667]">Kalmar's 2016</span> <br />
                   Global Award
@@ -266,20 +273,19 @@ const Home: React.FC = () => {
                   alt="Kalmar Award"
                   animate={{ y: [0, -12, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="h-56 md:h-64 w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] relative z-10"
+                  className="h-48 md:h-56 lg:h-64 w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] relative z-10"
                 />
               </div>
             </div>
 
-            {/* 2. PARTNERS CARD - Duration 3s */}
             <div className="md:col-span-5 bg-[#308667] rounded-[2.5rem] p-12 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-lg group">
               <div className="absolute top-10 opacity-20"><FaHandshake size={80} className="text-white" /></div>
               <div className="relative z-10 flex flex-col items-center">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-8xl font-black text-white tracking-tighter">
+                  <span className="text-6xl md:text-8xl font-black text-white tracking-tighter">
                     <Counter value={100} duration={3} />
                   </span>
-                  <span className="text-6xl font-black text-white/40">+</span>
+                  <span className="text-4xl md:text-6xl font-black text-white/40">+</span>
                 </div>
                 <p className="text-xs font-black uppercase tracking-[0.3em] text-white mt-4">Global Industrial Partners</p>
                 <div className="w-full h-[1px] bg-white/20 my-8" />
@@ -287,7 +293,6 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* 3. TENDERS - Duration 3s */}
             <div className="md:col-span-4 bg-white rounded-[2rem] p-10 flex flex-col items-center justify-center shadow-sm border border-gray-100 group">
               <FaFileContract size={32} className="text-[#0B1A13] mb-6 opacity-80" />
               <div className="flex items-center gap-1">
@@ -299,7 +304,6 @@ const Home: React.FC = () => {
               <p className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mt-4">Active Tenders</p>
             </div>
 
-            {/* 4. EXPERIENCE - Duration 3s */}
             <div className="md:col-span-4 bg-[#F9F6E5] rounded-[2rem] p-10 flex flex-col items-center justify-center shadow-sm group">
               <FaHistory size={32} className="text-[#0B1A13] mb-6 opacity-80" />
               <div className="flex items-center gap-1">
@@ -311,7 +315,6 @@ const Home: React.FC = () => {
               <p className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mt-4">Years Experience</p>
             </div>
 
-            {/* 5. LOGISTICS - Duration 3s */}
             <div className="md:col-span-4 bg-[#0B1A13] rounded-[2rem] p-10 flex flex-col items-center justify-center shadow-lg group border border-white/5">
               <FaTruckLoading size={32} className="text-[#308667] mb-6" />
               <div className="flex items-center gap-1">
@@ -330,7 +333,7 @@ const Home: React.FC = () => {
       <section className="relative py-32 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#122C21] uppercase tracking-tighter mb-6">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#122C21] uppercase tracking-tighter mb-6">
               Trusted <span className="text-[#308667]">Partners</span>
             </h2>
           </div>
