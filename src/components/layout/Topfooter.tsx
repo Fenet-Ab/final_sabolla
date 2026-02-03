@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 
+import TopFooter from '../../assets/TopFooter.png'
+
+
 const Topfooter = () => {
     return (
         <section className="relative py-28 text-white text-center overflow-hidden">
@@ -10,8 +13,7 @@ const Topfooter = () => {
             <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                    backgroundImage:
-                        "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1920')",
+                    backgroundImage: `url(${TopFooter})`,
                 }}
             />
             <div className="absolute inset-0 bg-[#09140F]/80" />
