@@ -4,7 +4,10 @@ import sourcing from '../assets/sourcing.jpg';
 import transportation from '../assets/transportation.jpg';
 import water from '../assets/water_swage.jpg';
 import advisory from '../assets/advisory.jpeg';
-import market from '../assets/market.jpg'
+import market from '../assets/market.jpg';
+import Business from '../assets/Business.png';
+import safety from '../assets/safety_security.jpg'
+import military from '../assets/military.jpg';
 
 
 export {
@@ -14,5 +17,8 @@ export {
     transportation,
     water,
     advisory,
-    market
+    market,
+    Business,
+    safety,
+    military
 }

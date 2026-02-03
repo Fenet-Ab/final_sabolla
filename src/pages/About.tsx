@@ -1,28 +1,29 @@
 import * as React from 'react';
 import { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from "react-router-dom";
+
 import { FaFingerprint, FaCompass, FaLightbulb, FaChevronRight } from "react-icons/fa";
 import Topfooter from '../components/layout/Topfooter';
+import { Business } from '../assets/asset';
 
 const VISION_MISSION_VALUES = [
   {
     key: 'mission',
     title: 'Our Mission',
     icon: <FaFingerprint />,
-    content: "Our mission is to provide global partners with strategic guidance and actionable insights for navigating Ethiopia’s regulatory, commercial, and logistical landscape. We specialize in supporting import and export operations, market entry strategy, sourcing and supply chain management, and investment advisory services.",
+    content: "Enable international businesses to enter, operate, and expand successfully in Ethiopia and the wider East African region by delivering strategic advisory services, actionable market intelligence, and end-to-end trade, sourcing, and supply-chain solutions. We combine deep local expertise with global best practices to help partners navigate regulatory, commercial, and logistical complexities, reduce risk, and achieve sustainable long-term growth.",
   },
   {
     key: 'vision',
     title: 'Our Vision',
     icon: <FaCompass />,
-    content: "To go beyond conventional trade, positioning SABOLLA as a dynamic platform for collaboration, investment, and growth across diverse industries in Ethiopia and the Horn of Africa region.",
+    content: "Become the leading gateway and most trusted trade platform connecting global businesses with Ethiopia and East Africa’s emerging markets. We aim to transcend traditional trade facilitation by serving as a dynamic hub for collaboration, investment, and innovation that strengthens regional value chains and drives inclusive, sustainable economic development.",
   },
   {
     key: 'approach',
     title: 'Our Approach',
     icon: <FaLightbulb />,
-    content: "By continuously exploring new sectors and innovative trade opportunities, we help international companies capitalize on Ethiopia’s growing economy. Our forward-looking approach ensures partners gain a trusted ally capable of mitigating risks and delivering sustainable outcomes.",
+    content: "Leverage a combination of deep local knowledge, global expertise, and hands-on operational support to guide international businesses through Ethiopia and East Africa’s complex markets. We proactively identify investment opportunities, emerging sectors, and reliable partners while managing end-to-end processes including market assessment, sourcing, regulatory compliance, logistics, supply chain management, and after-sales support. By integrating actionable insights with practical solutions, we ensure seamless operations, mitigate risks, and empower our partners to expand sustainably and confidently in the region.",
   },
 ];
 
@@ -67,16 +68,18 @@ const AboutPage: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="lg:col-span-5 relative min-h-[450px]"
+              className="lg:col-span-5 relative flex justify-center items-center"
             >
-              {/* Decorative accent behind the image */}
-              <div className="absolute inset-0 bg-[#308667] rounded-[3rem] translate-x-3 translate-y-3" />
-              <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  alt="Sabolla Professional Partnership"
-                />
+              <div className="relative w-full max-w-[420px] h-[420px]">
+                {/* Decorative accent behind the image */}
+                <div className="absolute inset-0 bg-[#308667] rounded-[3rem] translate-x-3 translate-y-3" />
+                <div className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-2xl">
+                  <img
+                    src={Business}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    alt="Sabolla Professional Partnership"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>

@@ -43,7 +43,7 @@ export const PARTNER_LOGOS = [
 
 // 6. Contact Info
 export const CONTACT_INFO = {
-    address: "123 Sabolla Corporate Tower, Addis Ababa, Ethiopia",
-    email: "info@sabolla-trading.com",
-    phone: "+251 11 878 0000",
+  address: "Marathon Mall, Megenagna, Addis Ababa, Ethiopia",
+  email: "info@sabolla-trading.com",
+  phone: "+251 93 390 6088",
 };

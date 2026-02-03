@@ -6,7 +6,7 @@ import { FaArrowRight } from 'react-icons/fa';
 // IMPORT LOCAL ASSET
 import bgPattern from "../assets/bg_pattern/image.png";
 import Topfooter from '../components/layout/Topfooter';
-import { fire, transportation, water } from '../assets/asset';
+import { fire, military, safety, transportation, water } from '../assets/asset';
 
 const PRODUCT_CATEGORIES = [
   {
@@ -19,20 +19,20 @@ const PRODUCT_CATEGORIES = [
     name: "Military",
     slug: "military",
     desc: "Advanced defense technologies and secure communication systems meeting exacting military standards.",
-    image: "https://images.unsplash.com/photo-1453683685760-b8db0bbb8dc2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1pbGl0YXJ5fGVufDB8fDB8fHww"
+    image: military
   },
   {
     name: "Fire & Disaster Risk",
     slug: "fire-disaster",
     desc: "Extensive range of firefighting trucks, aerial ladders, and emergency-response equipment.",
     image: fire
-    //  "https://images.unsplash.com/photo-1516533075015-a3838414c3ca?auto=format&fit=crop&q=80&w=800"
+
   },
   {
     name: "Safety & Security",
     slug: "safety-security",
     desc: "Specialized protective gear, breathing apparatus, and suits for high-risk industrial environments.",
-    image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=800"
+    image: safety
   },
   {
     name: "Agricultural Products",
@@ -96,7 +96,7 @@ const ProductsIndex: React.FC = () => {
 
       {/* ================= CATEGORY GRID ================= */}
       <section className="pb-32 container mx-auto px-6 max-w-7xl relative z-20 -mt-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PRODUCT_CATEGORIES.map((cat, idx) => (
             <motion.div
               key={cat.slug}

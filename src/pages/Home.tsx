@@ -140,7 +140,7 @@ const Home: React.FC = () => {
                   <span className="block">to Ethiopia.</span>
                 </h1>
                 <p className="text-lg md:text-xl text-[#0B1A13]/70 max-w-xl font-medium leading-relaxed mb-8">
-                  Navigating the complexities of East African trade. We bridge the gap between world-class technology and Ethiopia's industrial landscape.
+                  Navigating Ethiopia’s market with confidence. We connect international businesses to local opportunities, compliance, and sustainable growth.
                 </p>
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6">
                   <Link to="/services" className="group flex items-center justify-center gap-4 bg-[#0B1A13] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-[#308667] transition-all duration-300 shadow-xl">
