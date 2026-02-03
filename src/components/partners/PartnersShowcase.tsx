@@ -161,16 +161,16 @@ const PartnerCard = ({ partner, onClick, isGrid = false }: { partner: Partner, o
         React.isValidElement(partner.icon) ?
           React.cloneElement(partner.icon as React.ReactElement, {
             style: { width: '100px', height: '100px', objectFit: 'contain' },
-            className: `transition-all duration-700 ${isGrid ? 'grayscale-0 opacity-100' : 'grayscale opacity-50 lg:group-hover:grayscale-0 lg:group-hover:opacity-100'}`
+            className: `transition-all duration-700 grayscale-0 opacity-100`
           }) : <span className="text-5xl">🤝</span>
       )}
     </div>
 
-    <h3 className={`font-black text-[11px] uppercase tracking-[0.2em] mb-5 transition-all ${isGrid ? 'text-[#122C21]' : 'text-[#122C21]/60 lg:group-hover:text-[#122C21]'}`}>
+    <h3 className={`font-black text-[11px] uppercase tracking-[0.2em] mb-5 transition-all text-[#122C21]`}>
       {partner.name}
     </h3>
 
-    <div className={`flex items-center gap-2 text-[8px] font-black uppercase tracking-[0.3em] px-5 py-2.5 rounded-full border transition-all duration-300 ${isGrid ? 'bg-[#308667] text-white border-transparent shadow-md' : 'text-[#308667] bg-[#308667]/5 border-[#308667]/10 lg:group-hover:bg-[#308667] lg:group-hover:text-white lg:group-hover:shadow-lg lg:group-hover:shadow-[#308667]/20'}`}>
+    <div className={`flex items-center gap-2 text-[8px] font-black uppercase tracking-[0.3em] px-5 py-2.5 rounded-full border transition-all duration-300 bg-[#308667] text-white border-transparent shadow-md`}>
       <FaPlus size={7} /> View Profile
     </div>
   </motion.div>

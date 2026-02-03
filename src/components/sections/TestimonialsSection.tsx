@@ -3,6 +3,13 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
+// Import local images
+import rosenbauer from '../../assets/global_images/rosenbauer.svg';
+import ASI from '../../assets/global_images/ASI.png';
+import SACCON from '../../assets/global_images/saccon.png';
+// Using Sabolla icon as fallback for missing partner logos
+import sabollaLogo from '../../assets/logo/sabolla_logo_icon.png';
+
 interface Testimonial {
     id: number;
     name: string;
@@ -14,27 +21,35 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
     {
         id: 1,
-        name: 'Hans Mueller',
-        title: 'CEO, INDRA AVITECH GmbH',
-        avatarUrl: 'https://i.pravatar.cc/150?img=32',
+        name: 'Rosenbauer',
+        title: 'Klaus Hörschläger, Regional Vice President Sales, Sales Region Middle East and Africa',
+        avatarUrl: rosenbauer,
         quote:
-            'SABOLLA\'s deep understanding of the Ethiopian aviation sector was instrumental in our market entry. Their import facilitation and local coordination saved us weeks of work.',
+            'It has been a pleasure collaborating with Sabolla International Trading since our partnership began in 2007. Together, we have successfully delivered several fire engines to Ethiopian aviation authorities and the Ministry of Urban Development. Throughout every project, Sabolla has demonstrated exceptional reliability and a strong commitment to achieving the best outcomes.'
     },
     {
         id: 2,
-        name: 'Clara Rodriguez',
-        title: 'Procurement Director, Rosenbauer',
-        avatarUrl: 'https://i.pravatar.cc/150?img=47',
+        name: 'Saccon Gomme S.P.A.',
+        title: 'Ennio Saccon, Legal Representative',
+        avatarUrl: SACCON,
         quote:
-            'Navigating the regulations for fire safety equipment can be complex. SABOLLA handled everything flawlessly. They are a reliable and effective partner in Ethiopia.',
+            'Our collaboration with the Sabolla International Trading team began in 2016, and over the past nine to ten years, we have built a strong and productive working relationship. Through this partnership, we successfully executed major supply projects in 2019 and 2020. Saccon Gomme S.P.A. is a leading company in the tire sector, specializing in worldwide import and export.'
     },
     {
         id: 3,
-        name: 'David Chen',
-        title: 'Operations Manager, Jingshen International',
-        avatarUrl: 'https://i.pravatar.cc/150?img=68',
+        name: 'ASI (EUROPE) Ltd.',
+        title: 'Laurent Toledano, Managing Director',
+        avatarUrl: ASI,
         quote:
-            'Their market insights were invaluable. They provided us with actionable data that shaped our entire strategy for the region. We couldn\'t have done it without their expert advisory.',
+            'Working with Sabolla International Trading over the past three years has significantly strengthened our business and enabled us to establish a solid presence in the Ethiopian market. Their support has been particularly valuable in managing tender submissions, navigating the online tendering system, arranging site visits, and acting as an effective liaison with customers.'
+    },
+    {
+        id: 4,
+        name: 'Yiwu Foreal Import & Export Co., Ltd.',
+        title: 'Hou Fu, Sales Manager',
+        avatarUrl: sabollaLogo,
+        quote:
+            'Yiwu Foreal Import & Export Co., Ltd. has worked closely with Sabolla International Trading for over five years. During this period, Sabolla has been a reliable and committed partner, supporting the supply and distribution of key products. Their strong understanding of the local market, professionalism in procurement processes, and consistent follow-up have played a vital role in our success.'
     },
 ];
 
@@ -44,7 +59,7 @@ const TestimonialsSection = (): JSX.Element => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-        }, 6000);
+        }, 8000);
         return () => clearInterval(interval);
     }, []);
 
@@ -55,50 +70,50 @@ const TestimonialsSection = (): JSX.Element => {
     };
 
     return (
-        <section className="relative py-24 bg-[#F9F2D6] overflow-hidden font-['Montserrat'] border-t border-black/5">
-            {/* Background Watermark - Matching Milestone/Partners Style */}
-            <div className="absolute top-10 right-0 text-[12rem] font-black text-[#0B1A13]/[0.02] select-none pointer-events-none tracking-tighter leading-none">
+        <section className="relative py-16 bg-[#F9F2D6] overflow-hidden font-['Montserrat'] border-t border-black/5">
+            {/* Background Watermark - Smaller and less intrusive */}
+            <div className="absolute top-10 right-0 text-[6rem] font-black text-[#0B1A13]/[0.02] select-none pointer-events-none tracking-tighter leading-none">
                 VOICE
             </div>
 
-            <div className="container mx-auto px-6 max-w-7xl relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                    
-                    {/* Left Side: Header (Following the Who We Are / Milestone Layout) */}
+            <div className="container mx-auto px-6 max-w-6xl relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                    {/* Left Side: Compact Header */}
                     <div className="lg:col-span-5">
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            className="flex items-center gap-4 mb-4"
+                            className="flex items-center gap-3 mb-2"
                         >
-                            <div className="h-[1px] w-10 bg-[#308667]" />
-                            <span className="text-[10px] font-black text-[#308667] uppercase tracking-[0.4em]">Testimonials</span>
+                            <div className="h-[1px] w-8 bg-[#308667]" />
+                            <span className="text-[9px] font-black text-[#308667] uppercase tracking-[0.3em]">Testimonials</span>
                         </motion.div>
-                        <h2 className="text-4xl md:text-5xl font-black text-[#0B1A13] uppercase tracking-tighter leading-[0.95] mb-8">
-                            Global <br/> <span className="text-[#308667]">Perspectives</span>
+                        <h2 className="text-3xl lg:text-4xl font-black text-[#0B1A13] uppercase tracking-tighter leading-tight mb-4">
+                            Global <br /> <span className="text-[#308667]">Perspectives</span>
                         </h2>
-                        <p className="text-sm text-[#0B1A13]/60 max-w-sm font-medium leading-relaxed">
+                        <p className="text-xs text-[#0B1A13]/60 max-w-sm font-medium leading-relaxed mb-6">
                             Trusted by industry leaders to engineer sustainable growth and navigate complex market entries within the Ethiopian economic landscape.
                         </p>
 
-                        {/* Navigation Controls moved to the side for a more "Dashboard" look */}
-                        <div className="flex gap-3 mt-10">
+                        {/* Compact Navigation Controls */}
+                        <div className="flex gap-2">
                             <button
                                 onClick={() => setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
-                                className="p-4 rounded-full border border-[#0B1A13]/10 text-[#0B1A13] hover:bg-[#0B1A13] hover:text-white transition-all duration-300"
+                                className="p-3 rounded-full border border-[#0B1A13]/10 text-[#0B1A13] hover:bg-[#0B1A13] hover:text-white transition-all duration-300"
                             >
-                                <FaChevronLeft size={14} />
+                                <FaChevronLeft size={12} />
                             </button>
                             <button
                                 onClick={() => setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
-                                className="p-4 rounded-full border border-[#0B1A13]/10 text-[#0B1A13] hover:bg-[#0B1A13] hover:text-white transition-all duration-300"
+                                className="p-3 rounded-full border border-[#0B1A13]/10 text-[#0B1A13] hover:bg-[#0B1A13] hover:text-white transition-all duration-300"
                             >
-                                <FaChevronRight size={14} />
+                                <FaChevronRight size={12} />
                             </button>
                         </div>
                     </div>
 
-                    {/* Right Side: The Testimonial Card */}
+                    {/* Right Side: The Compact Testimonial Card */}
                     <div className="lg:col-span-7">
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -107,46 +122,48 @@ const TestimonialsSection = (): JSX.Element => {
                                 initial="hidden"
                                 animate="visible"
                                 exit="exit"
-                                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                                className="bg-[#0B1A13] rounded-[3rem] p-10 md:p-14 shadow-2xl relative overflow-hidden"
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                className="bg-[#0B1A13] rounded-[2rem] p-8 md:p-10 shadow-xl relative overflow-hidden"
                             >
-                                {/* Decorative elements inside the card */}
-                                <FaQuoteLeft className="text-5xl text-[#308667]/20 mb-8" />
-                                
-                                <p className="text-[#F9F2D6] text-xl md:text-2xl mb-12 font-bold leading-relaxed italic relative z-10">
+                                {/* Decorative quote icon - smaller */}
+                                <FaQuoteLeft className="text-3xl text-[#308667]/20 mb-6" />
+
+                                <p className="text-[#F9F2D6] text-sm md:text-base mb-8 font-medium leading-relaxed italic relative z-10">
                                     "{testimonials[currentIndex].quote}"
                                 </p>
 
-                                <div className="flex items-center justify-between relative z-10 pt-8 border-t border-white/10">
-                                    <div className="flex items-center">
-                                        <img
-                                            className="w-14 h-14 rounded-2xl object-cover mr-5 border-2 border-[#308667]/30"
-                                            src={testimonials[currentIndex].avatarUrl}
-                                            alt={testimonials[currentIndex].name}
-                                        />
+                                <div className="flex items-center justify-between relative z-10 pt-6 border-t border-white/10">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-xl overflow-hidden bg-[#308667] border border-[#308667]/30 flex items-center justify-center p-1">
+                                            <img
+                                                className="w-full h-full object-contain"
+                                                src={testimonials[currentIndex].avatarUrl}
+                                                alt={testimonials[currentIndex].name}
+                                            />
+                                        </div>
                                         <div>
-                                            <h4 className="font-black text-[#F9F2D6] uppercase tracking-wider text-sm">
+                                            <h4 className="font-bold text-[#F9F2D6] uppercase tracking-wide text-xs">
                                                 {testimonials[currentIndex].name}
                                             </h4>
-                                            <p className="text-[#308667] text-[10px] font-black uppercase tracking-[0.2em] mt-1">
+                                            <p className="text-[#308667] text-[9px] font-bold uppercase tracking-[0.1em] mt-0.5 max-w-[200px] truncate">
                                                 {testimonials[currentIndex].title}
                                             </p>
                                         </div>
                                     </div>
-                                    
+
                                     {/* Indicator inside the card */}
-                                    <div className="hidden md:flex gap-2">
+                                    <div className="hidden md:flex gap-1.5">
                                         {testimonials.map((_, index) => (
-                                            <div 
+                                            <div
                                                 key={index}
-                                                className={`h-1 rounded-full transition-all duration-500 ${index === currentIndex ? 'w-6 bg-[#308667]' : 'w-2 bg-white/10'}`}
+                                                className={`h-1 rounded-full transition-all duration-500 ${index === currentIndex ? 'w-5 bg-[#308667]' : 'w-1.5 bg-white/10'}`}
                                             />
                                         ))}
                                     </div>
                                 </div>
 
-                                {/* Subtle background gradient for the card */}
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-[#308667]/5 blur-[80px] rounded-full -mr-20 -mt-20" />
+                                {/* Subtle background gradient */}
+                                <div className="absolute top-0 right-0 w-48 h-48 bg-[#308667]/5 blur-[60px] rounded-full -mr-10 -mt-10" />
                             </motion.div>
                         </AnimatePresence>
                     </div>
