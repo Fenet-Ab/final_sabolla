@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { motion } from "framer-motion";
+import { map as mapAsset } from '../../assets/asset';
 
 const locations = [
   { name: "Ethiopia", top: "50%", left: "59%" },
@@ -28,18 +29,18 @@ const routes = locations
 const GlobalFootprint: React.FC = () => {
   return (
     <section className="relative py-24 bg-[#F9F2D6] overflow-hidden border-t border-black/5 font-['Montserrat']">
-      
+
       {/* Background Watermark - Matching other sections */}
       <div className="absolute top-10 left-0 text-[12rem] font-black text-[#0B1A13]/[0.02] select-none pointer-events-none tracking-tighter leading-none">
         WORLD
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        
+
         {/* NEW HEADING STYLE (Left-Aligned) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16">
           <div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="flex items-center gap-4 mb-4"
@@ -48,7 +49,7 @@ const GlobalFootprint: React.FC = () => {
               <span className="text-[10px] font-black text-[#308667] uppercase tracking-[0.4em]">Global Presence</span>
             </motion.div>
             <h2 className="text-4xl md:text-5xl font-black text-[#122C21] uppercase tracking-tighter leading-[0.95]">
-              Our Global <br/> <span className="text-[#308667]">Footprint</span>
+              Our Global <br /> <span className="text-[#308667]">Footprint</span>
             </h2>
           </div>
           <div className="lg:pb-2">
@@ -61,7 +62,7 @@ const GlobalFootprint: React.FC = () => {
         {/* ORIGINAL MAP & SVG LOGIC (Untouched) */}
         <div className="relative w-full">
           <motion.img
-            src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
+            src={mapAsset}
             alt="World Map"
             className="w-full h-auto select-none opacity-30 block"
             style={{
@@ -125,11 +126,11 @@ const GlobalFootprint: React.FC = () => {
 
         {/* REFINED BOTTOM TAGLINE */}
         <div className="mt-20 flex items-center justify-center gap-6">
-           <div className="h-px w-12 bg-[#122C21]/10" />
-           <p className="text-[10px] uppercase tracking-[0.5em] font-black text-[#308667]">
-              Verified Trade Corridors
-           </p>
-           <div className="h-px w-12 bg-[#122C21]/10" />
+          <div className="h-px w-12 bg-[#122C21]/10" />
+          <p className="text-[10px] uppercase tracking-[0.5em] font-black text-[#308667]">
+            Verified Trade Corridors
+          </p>
+          <div className="h-px w-12 bg-[#122C21]/10" />
         </div>
       </div>
     </section>

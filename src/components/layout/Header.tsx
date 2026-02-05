@@ -1,7 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import SabollaLogo from "../../assets/logo/sabolla_logo.png";
+import { sabollaLogo } from "../../assets/asset";
+
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -59,7 +60,7 @@ const Header: React.FC = () => {
           {/* LOGO */}
           <Link to="/" className="block z-[90]">
             <img
-              src={SabollaLogo}
+              src={sabollaLogo}
               alt="Sabolla"
               className={`w-auto object-contain transition-all duration-500
                 ${hasScrolled ? "h-14 lg:h-16" : "h-16 lg:h-24"}`}

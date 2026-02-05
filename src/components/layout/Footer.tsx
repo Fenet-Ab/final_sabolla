@@ -8,7 +8,8 @@ import {
   FaChevronRight
 } from "react-icons/fa";
 import { CONTACT_INFO } from "../../data/mockData";
-import SabollaLogo from "../../assets/logo/sabolla_logo.png";
+import { sabollaLogo } from '../../assets/asset';
+
 
 const Footer: React.FC = () => {
   // Navigation mapping from your original logic to ensure 404s are fixed
@@ -20,12 +21,7 @@ const Footer: React.FC = () => {
     { name: 'Partners', path: '/partners' }
   ];
 
-  // const supportLinks = [
-  //   { name: 'Contact Us', path: '/contact' },
-  //   { name: 'Privacy Policy', path: '/privacy-terms/privacy' },
-  //   { name: 'Terms of Service', path: '/privacy-terms/terms' },
-  //   { name: 'FAQ', path: '/faq' }
-  // ];
+
 
   return (
     <footer className="bg-[#0B1A13] text-[#F9F2D6]/80 pt-16 pb-8 border-t border-white/5 font-['Montserrat']">
@@ -36,7 +32,7 @@ const Footer: React.FC = () => {
           <div className="space-y-8">
             <Link to="/" className="inline-block transform transition-transform hover:scale-105">
               <img
-                src={SabollaLogo}
+                src={sabollaLogo}
                 alt="Sabolla"
                 className="h-24 w-auto object-contain origin-left"
                 style={{ filter: "drop-shadow(0px 10px 20px rgba(0,0,0,0.3))" }}

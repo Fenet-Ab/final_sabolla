@@ -4,9 +4,9 @@ import { useParams, Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 
 // 1. IMPORT YOUR LOCAL ASSETS
-import bgPattern from "../assets/bg_pattern/image.png";
+
 import Topfooter from '../components/layout/Topfooter';
-import { agreculture, aviation, fire, military, power, safety, transportation, water } from '../assets/asset';
+import { agreculture, aviation, bgPattern, fire, military, power, safety, transportation, water } from '../assets/asset';
 
 const PRODUCT_DATA: Record<string, any> = {
   "aviation": {

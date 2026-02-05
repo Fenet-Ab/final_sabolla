@@ -10,7 +10,7 @@ import Topfooter from '../components/layout/Topfooter';
 
 const PartnersPage: React.FC = () => {
   return (
-    <div className="bg-[#F9F2D6] min-h-screen font-['Montserrat']">
+    <div className="bg-[#F9F2D6] min-h-screen font-['Montserrat'] w-full overflow-x-hidden">
 
       {/* ================= HERO SECTION ================= */}
       <section className="relative bg-[#cff4e4] pt-48 pb-32 overflow-hidden">
@@ -27,7 +27,7 @@ const PartnersPage: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-7xl font-black text-[#122C21] uppercase tracking-tighter leading-[0.85] mb-8"
+            className="text-3xl md:text-5xl lg:text-7xl font-black text-[#122C21] uppercase tracking-tighter leading-none mb-8"
           >
             Strategic   <span className="text-[#308667]">Synergy</span>
           </motion.h1>
@@ -44,10 +44,10 @@ const PartnersPage: React.FC = () => {
       </section>
 
       {/* ================= PARTNERS SECTION ================= */}
-      <section className="relative py-32 bg-white">
+      <section className="relative py-32 bg-white overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-24">
-            <h2 className="text-5xl md:text-7xl font-black text-[#122C21] uppercase tracking-tighter mb-6">
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-[#122C21] uppercase tracking-tighter mb-6">
               Trusted <span className="text-[#308667]">Partners</span>
             </h2>
             <div className="w-24 h-2 bg-[#308667] mx-auto mb-8 rounded-full" />

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { FaShip, FaArrowRight, FaChartLine, FaGavel, FaBoxOpen } from 'react-icons/fa';
 
 // IMPORT LOCAL ASSET
-import bgPattern from "../assets/bg_pattern/image.png";
+
 import Topfooter from '../components/layout/Topfooter';
-import { advisory, import_export, market, sourcing } from '../assets/asset';
+import { advisory, bgPattern, import_export, market, sourcing } from '../assets/asset';
 
 const SERVICES_LIST = [
   {
@@ -56,7 +56,7 @@ const ServicesIndex: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-7xl lg:text-5xl xl:text-6xl font-black text-[#122C21] mb-8 uppercase tracking-tighter leading-none">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-black text-[#122C21] mb-8 uppercase tracking-tighter leading-none">
               Strategic <span className="text-[#308667] ">Trade</span>
             </h1>
             <p className="text-lg md:text-xl text-[#122C21]/60 font-bold italic inline-block pb-8">
@@ -118,7 +118,7 @@ const ServicesIndex: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center gap-20">
             <div className="lg:w-1/2">
               <span className="text-[10px] font-black text-[#308667] uppercase tracking-[0.4em] mb-4 block">Our Lifecycle Management</span>
-              <h3 className="text-4xl md:text-6xl font-black text-[#122C21] uppercase tracking-tighter mb-8 leading-none">
+              <h3 className="text-3xl md:text-5xl font-black text-[#122C21] uppercase tracking-tighter mb-8 leading-none">
                 Strategic <br /> <span className="text-[#308667]">Execution</span>
               </h3>
               <p className="text-[#122C21]/70 text-lg font-bold mb-10 leading-relaxed">

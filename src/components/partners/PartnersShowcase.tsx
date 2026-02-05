@@ -119,7 +119,9 @@ const PartnersShowcase: React.FC<PartnersShowcaseProps> = ({ partners }) => {
 
               <div className="flex justify-center mb-6">
                 {React.isValidElement(activePartner.icon) ?
-                  React.cloneElement(activePartner.icon as React.ReactElement, { style: { width: '120px', height: '120px', objectFit: 'contain' } }) :
+                  React.cloneElement(activePartner.icon as React.ReactElement<any>, {
+                    style: { width: '120px', height: '120px', objectFit: 'contain' }
+                  }) :
                   <span className="text-8xl">{activePartner.icon}</span>
                 }
               </div>
@@ -159,7 +161,7 @@ const PartnerCard = ({ partner, onClick, isGrid = false }: { partner: Partner, o
         <span className="text-6xl block">{partner.icon}</span>
       ) : (
         React.isValidElement(partner.icon) ?
-          React.cloneElement(partner.icon as React.ReactElement, {
+          React.cloneElement(partner.icon as React.ReactElement<any>, {
             style: { width: '100px', height: '100px', objectFit: 'contain' },
             className: `transition-all duration-700 grayscale-0 opacity-100`
           }) : <span className="text-5xl">🤝</span>

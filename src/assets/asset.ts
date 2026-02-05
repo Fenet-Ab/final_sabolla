@@ -16,8 +16,11 @@ import import_export from '../assets/import_export.png';
 import rosenbauer from '../assets/global_images/rosenbauer.svg';
 import ASI from '../assets/global_images/ASI.png';
 import SACCON from '../assets/global_images/saccon.png';
-// Using Sabolla icon as fallback for missing partner logos
+
 import sabollaLogo from '../assets/logo/sabolla_logo_icon.png';
+import worldMap from '../assets/world-map.png';
+import bgPattern from "../assets/bg_pattern/image.png";
+import map from '../assets/map.svg';
 
 
 export {
@@ -39,5 +42,8 @@ export {
     rosenbauer,
     ASI,
     SACCON,
-    sabollaLogo
+    sabollaLogo,
+    worldMap,
+    bgPattern,
+    map,
 }

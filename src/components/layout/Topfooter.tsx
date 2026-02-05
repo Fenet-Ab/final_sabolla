@@ -25,7 +25,7 @@ const Topfooter = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="text-4xl md:text-6xl font-extrabold mb-8 text-white tracking-tight"
+                    className="text-2xl sm:text-3xl md:text-4xl font-black mb-8 text-white uppercase leading-tight tracking-tighter"
                 >
                     Ready to Expand into the <br /> <span className="text-[#308667]">Ethiopian Market?</span>
                 </motion.h3>

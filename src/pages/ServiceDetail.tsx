@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { FaArrowLeft } from 'react-icons/fa';
 
 // 1. IMPORT YOUR LOCAL ASSET
-import bgPattern from "../assets/bg_pattern/image.png";
+
 import Topfooter from '../components/layout/Topfooter';
-import { advisory, import_export, market, sourcing } from '../assets/asset';
+import { advisory, bgPattern, import_export, market, sourcing } from '../assets/asset';
 
 // --- SERVICE DATA (EXTRACTED FROM UPLOADED IMAGES) ---
 const DETAILED_SERVICES: Record<string, any> = {

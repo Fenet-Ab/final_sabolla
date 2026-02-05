@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 
 // IMPORT LOCAL ASSET
-import bgPattern from "../assets/bg_pattern/image.png";
+
 import Topfooter from '../components/layout/Topfooter';
-import { agreculture, aviation, fire, military, power, safety, transportation, water } from '../assets/asset';
+import { agreculture, aviation, bgPattern, fire, military, power, safety, transportation, water } from '../assets/asset';
 
 const PRODUCT_CATEGORIES = [
   {
@@ -82,7 +82,7 @@ const ProductsIndex: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl md:text-7xl lg:text-5xl xl:text-6xl font-black text-[#122C21] mb-8 uppercase tracking-tighter leading-none">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-black text-[#122C21] mb-8 uppercase tracking-tighter leading-none">
               Managed <span className="text-[#308667]">Commodities</span>
             </h1>
             <p className="text-xl md:text-2xl text-[#122C21]/60 max-w-4xl mx-auto font-bold italic pb-12 inline-block">

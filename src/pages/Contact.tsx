@@ -29,7 +29,7 @@ const ContactPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-6xl md:text-8xl font-black text-[#122C21] uppercase tracking-tighter leading-[0.85] mb-8">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-black text-[#122C21] uppercase tracking-tighter leading-none mb-8">
               Get In <span className="text-[#308667] italic">Touch</span>
             </h1>
             <p className="text-[#122C21]/60 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
@@ -111,7 +111,7 @@ const ContactPage: React.FC = () => {
             <div className="lg:col-span-7 p-10 md:p-16 bg-[#FDFBF2]">
               <div className="max-w-2xl">
                 <h2 className="text-xs font-black text-[#308667] uppercase tracking-[0.5em] mb-4">Direct Inquiry</h2>
-                <h3 className="text-4xl font-black text-[#122C21] uppercase tracking-tighter mb-4">Request Intelligence</h3>
+                <h3 className="text-2xl md:text-4xl font-black text-[#122C21] uppercase tracking-tighter mb-4">Request Intelligence</h3>
                 <p className="text-[#122C21]/60 font-medium mb-10">
                   Fill out the form below and a sector specialist will reach out within 24 hours.
                 </p>

@@ -15,8 +15,8 @@ import { PARTNERS } from "../data/partners";
 import { LOCAL_PARTNERS } from "../data/localPartners";
 import TestimonialsSection from "../components/sections/TestimonialsSection";
 import Topfooter from '../components/layout/Topfooter';
-import { award } from '../assets/asset'; // Importing your asset
-import sabollaLogoIcon from '../assets/logo/sabolla_logo_icon.png';
+import { award, sabollaLogo, worldMap } from '../assets/asset'; // Importing your asset
+
 
 const Counter = ({ value, duration = 2 }: { value: number; duration?: number }) => {
   const [count, setCount] = React.useState(0);
@@ -180,7 +180,10 @@ const Home: React.FC = () => {
                     />
                   </div>
 
-                  <div className="absolute inset-0 opacity-[0.08] bg-[url('https://www.transparenttextures.com/patterns/world-map.png')] bg-center bg-no-repeat bg-contain rounded-full" />
+                  <div
+                    className="absolute inset-0 opacity-[0.08] bg-center bg-no-repeat bg-contain rounded-full"
+                    style={{ backgroundImage: `url(${worldMap})` }}
+                  />
 
                   <motion.div
                     whileHover={{
@@ -205,7 +208,7 @@ const Home: React.FC = () => {
                     className="relative z-20 w-1/2 h-1/2 flex items-center justify-center cursor-default"
                   >
                     <img
-                      src={sabollaLogoIcon}
+                      src={sabollaLogo}
                       alt="Sabolla Logo Icon"
                       className="w-full h-full object-contain select-none"
                       draggable="false"
