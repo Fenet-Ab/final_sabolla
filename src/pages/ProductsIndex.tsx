@@ -6,14 +6,14 @@ import { FaArrowRight } from 'react-icons/fa';
 // IMPORT LOCAL ASSET
 import bgPattern from "../assets/bg_pattern/image.png";
 import Topfooter from '../components/layout/Topfooter';
-import { fire, military, safety, transportation, water } from '../assets/asset';
+import { agreculture, aviation, fire, military, power, safety, transportation, water } from '../assets/asset';
 
 const PRODUCT_CATEGORIES = [
   {
     name: "Aviation",
     slug: "aviation",
     desc: "Critical communication, navigation, and information-management systems for air traffic and airports.",
-    image: "https://corporate.ethiopianairlines.com/images/default-source/corporate-image/600-x-400-px-aircraft-207559ff99f634e0eb3d4ef8ab0252e90.jpg?sfvrsn=6a41cd38_0"
+    image: aviation
   },
   {
     name: "Military",
@@ -38,7 +38,7 @@ const PRODUCT_CATEGORIES = [
     name: "Agricultural Products",
     slug: "agriculture",
     desc: "Food-grade hermetic storage, post-harvest protection, and essential farming implements.",
-    image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=800"
+    image: agreculture
   },
   {
     name: "Water & Sewerage",
@@ -51,7 +51,7 @@ const PRODUCT_CATEGORIES = [
     name: "Power & Energy",
     slug: "power-energy",
     desc: "Electrical infrastructure components, transformers, and scalable energy system solutions.",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800"
+    image: power
   },
   {
     name: "Transportation & Storage",

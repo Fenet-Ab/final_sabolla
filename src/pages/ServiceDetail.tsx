@@ -6,7 +6,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 // 1. IMPORT YOUR LOCAL ASSET
 import bgPattern from "../assets/bg_pattern/image.png";
 import Topfooter from '../components/layout/Topfooter';
-import { advisory, market, sourcing } from '../assets/asset';
+import { advisory, import_export, market, sourcing } from '../assets/asset';
 
 // --- SERVICE DATA (EXTRACTED FROM UPLOADED IMAGES) ---
 const DETAILED_SERVICES: Record<string, any> = {
@@ -26,7 +26,7 @@ const DETAILED_SERVICES: Record<string, any> = {
     name: "Import and Export",
     intro: "We provide end-to-end support for import and export processes, ensuring smooth, compliant, and efficient movement of goods. Our team manages all aspects of regulatory compliance, including certifications, permits, quality standards, and documentation such as invoices, packing lists, certificates of origin, and pre-shipment inspections. We coordinate closely with customs authorities, shipping agents, and freight forwarders to streamline operations and minimize procedural delays.",
     outcome: "Our services also cover logistics management, transportation planning, and monitoring of exports from Ethiopia to global markets. We handle risk assessment, tracking, and coordination with stakeholders to ensure timely delivery and minimize disruptions. By managing regulatory requirements and operational logistics proactively, we allow international partners to focus on market growth with confidence that their supply chain is fully optimized.",
-    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800"
+    image: import_export
   },
   "sourcing": {
     name: "Sourcing & Supply Chain",
@@ -69,19 +69,24 @@ const ServiceDetail: React.FC = () => {
           style={{ backgroundImage: `url(${bgPattern})`, backgroundSize: '150px 150px' }}
         />
 
-        <div className="container mx-auto px-6 relative z-10 text-center pb-12">
-          <div className="lg:absolute lg:left-6 lg:bottom-12 lg:mb-0 mb-8 flex justify-center lg:block">
-            <Link to="/services" className="group inline-flex items-center gap-3 text-white font-black uppercase tracking-[0.4em] text-[10px] hover:text-[#F9F2D6] transition-all no-underline">
-              <FaArrowLeft className="group-hover:-translate-x-2 transition-transform" />
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Back Button - Positioned to match ProductDetail for consistency and to avoid overlaps */}
+          <div className="flex justify-center md:justify-start mb-8">
+            <Link to="/services" className="group inline-flex items-center gap-3 text-white font-black uppercase tracking-[0.4em] text-[11px] hover:text-[#F9F2D6] transition-all no-underline">
+              <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[#387663] transition-all">
+                <FaArrowLeft className="group-hover:-translate-x-0.5 transition-transform" />
+              </div>
               Back
             </Link>
           </div>
 
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="inline-block">
-            <h1 className="text-4xl md:text-7xl lg:text-5xl xl:text-6xl mt-20 font-black text-[#F9F2D6] uppercase leading-none tracking-tighter">
-              {service.name}
-            </h1>
-          </motion.div>
+          <div className="text-center pb-12">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="inline-block">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#F9F2D6] uppercase leading-none tracking-tighter">
+                {service.name}
+              </h1>
+            </motion.div>
+          </div>
         </div>
 
         <div className="absolute bottom-0 left-0 w-full h-24 bg-white" style={{ clipPath: 'polygon(0 100%, 100% 100%, 0 0)' }}></div>

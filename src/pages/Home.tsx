@@ -50,7 +50,7 @@ const useScrollParallax = (speed: number) => {
 };
 
 const Home: React.FC = () => {
-  const dynamicTexts = ["Gateway ", "Official Trade Representation", "Market Entry Solution", "Trade Facilitation and Compliance Pathway"];
+  const dynamicTexts = ["Gateway ", "Trade Representation ", "Market Entry ", "Trade Facilitation Pathway "];
   const [textIndex, setTextIndex] = React.useState(0);
 
   React.useEffect(() => {
@@ -137,7 +137,7 @@ const Home: React.FC = () => {
                     </AnimatePresence>
                   </div>
 
-                  <span className="block">to Ethiopia.</span>
+                  <span className="block">to Ethiopia’s Market.</span>
                 </h1>
                 <p className="text-lg md:text-xl text-[#0B1A13]/70 max-w-xl font-medium leading-relaxed mb-8">
                   Navigating Ethiopia’s market with confidence. We connect international businesses to local opportunities, compliance, and sustainable growth.

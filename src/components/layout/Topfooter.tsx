@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 
-import TopFooter from '../../assets/TopFooter.png'
+
+import { topfooter } from '../../assets/asset'
 
 
 const Topfooter = () => {
@@ -13,7 +14,7 @@ const Topfooter = () => {
             <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                    backgroundImage: `url(${TopFooter})`,
+                    backgroundImage: `url(${topfooter})`,
                 }}
             />
             <div className="absolute inset-0 bg-[#09140F]/80" />

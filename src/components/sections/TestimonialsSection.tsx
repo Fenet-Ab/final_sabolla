@@ -2,13 +2,8 @@ import { type JSX } from 'react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { ASI, rosenbauer, sabollaLogo, SACCON } from '../../assets/asset';
 
-// Import local images
-import rosenbauer from '../../assets/global_images/rosenbauer.svg';
-import ASI from '../../assets/global_images/ASI.png';
-import SACCON from '../../assets/global_images/saccon.png';
-// Using Sabolla icon as fallback for missing partner logos
-import sabollaLogo from '../../assets/logo/sabolla_logo_icon.png';
 
 interface Testimonial {
     id: number;
@@ -87,12 +82,12 @@ const TestimonialsSection = (): JSX.Element => {
                             className="flex items-center gap-3 mb-2"
                         >
                             <div className="h-[1px] w-8 bg-[#308667]" />
-                            <span className="text-[9px] font-black text-[#308667] uppercase tracking-[0.3em]">Testimonials</span>
+                            <span className="text-xs font-black text-[#308667] uppercase tracking-[0.3em]">Testimonials</span>
                         </motion.div>
-                        <h2 className="text-3xl lg:text-4xl font-black text-[#0B1A13] uppercase tracking-tighter leading-tight mb-4">
+                        <h2 className="text-5xl lg:text-7xl font-black text-[#0B1A13] uppercase tracking-tighter leading-none mb-6">
                             Global <br /> <span className="text-[#308667]">Perspectives</span>
                         </h2>
-                        <p className="text-xs text-[#0B1A13]/60 max-w-sm font-medium leading-relaxed mb-6">
+                        <p className="text-sm md:text-base text-[#0B1A13]/60 max-w-sm font-medium leading-relaxed mb-8">
                             Trusted by industry leaders to engineer sustainable growth and navigate complex market entries within the Ethiopian economic landscape.
                         </p>
 
@@ -142,10 +137,10 @@ const TestimonialsSection = (): JSX.Element => {
                                             />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-[#F9F2D6] uppercase tracking-wide text-xs">
+                                            <h4 className="font-bold text-[#F9F2D6] uppercase tracking-wide text-sm">
                                                 {testimonials[currentIndex].name}
                                             </h4>
-                                            <p className="text-[#308667] text-[9px] font-bold uppercase tracking-[0.1em] mt-0.5 max-w-[200px] truncate">
+                                            <p className="text-[#308667] text-[11px] font-bold uppercase tracking-[0.1em] mt-1 max-w-[250px]">
                                                 {testimonials[currentIndex].title}
                                             </p>
                                         </div>

@@ -6,7 +6,7 @@ import { FaShip, FaArrowRight, FaChartLine, FaGavel, FaBoxOpen } from 'react-ico
 // IMPORT LOCAL ASSET
 import bgPattern from "../assets/bg_pattern/image.png";
 import Topfooter from '../components/layout/Topfooter';
-import { advisory, market, sourcing } from '../assets/asset';
+import { advisory, import_export, market, sourcing } from '../assets/asset';
 
 const SERVICES_LIST = [
   {
@@ -26,7 +26,7 @@ const SERVICES_LIST = [
     name: "Import & Export",
     slug: "import-export",
     shortDesc: "End-to-end support for regulatory compliance, documentation, and the efficient movement of goods through customs and logistics.",
-    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800"
+    image: import_export
   },
   {
     name: "Sourcing & Supply Chain",

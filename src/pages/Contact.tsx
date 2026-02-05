@@ -6,7 +6,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaClock, FaExternalLinkAlt } fr
 
 const ContactPage: React.FC = () => {
   // Replace this with your actual coordinates or address string
-  const mapQuery = encodeURIComponent("Sabolla International Trading Plc, Marathon Mall, Addis Ababa");
+  const mapQuery = encodeURIComponent("Sabolla International Trading Plc, Marathon Motors Mall, Megenagna, Addis Ababa, Ethiopia");
   const mapEmbedUrl = `https://maps.google.com/maps?q=${mapQuery}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
   const googleMapsRedirect = `https://maps.app.goo.gl/rQAHga39ZAK4Y2HTA`;
 

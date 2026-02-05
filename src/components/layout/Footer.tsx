@@ -48,7 +48,13 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex gap-4">
               {[FaLinkedin].map((Icon, idx) => (
-                <a key={idx} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#308667] transition-all text-white border border-white/10 hover:border-[#308667] group">
+                <a
+                  key={idx}
+                  href="https://www.linkedin.com/company/sabolla-international-trading-plc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#308667] transition-all text-white border border-white/10 hover:border-[#308667] group"
+                >
                   <Icon size={16} className="group-hover:scale-110 transition-transform" />
                 </a>
               ))}

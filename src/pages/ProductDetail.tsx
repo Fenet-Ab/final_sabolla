@@ -6,7 +6,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 // 1. IMPORT YOUR LOCAL ASSETS
 import bgPattern from "../assets/bg_pattern/image.png";
 import Topfooter from '../components/layout/Topfooter';
-import { fire, military, safety, transportation, water } from '../assets/asset';
+import { agreculture, aviation, fire, military, power, safety, transportation, water } from '../assets/asset';
 
 const PRODUCT_DATA: Record<string, any> = {
   "aviation": {
@@ -14,7 +14,7 @@ const PRODUCT_DATA: Record<string, any> = {
     content: "We support the aviation sector with a comprehensive suite of critical communication, navigation, and information-management systems. Our portfolio includes VHF AM base stations, communication and navigation spare parts, AMHS systems, AIM systems, AIS systems, and other aviation-essential components. Each product is carefully sourced from trusted manufacturers, with detailed verification to ensure technical compliance with international aviation safety standards. Beyond procurement, we coordinate supplier engagement, manage import documentation, and oversee the certification process, ensuring that all equipment meets stringent regulatory and operational requirements.",
     lifecycle: "In addition to supply, we provide full lifecycle support, including installation guidance, maintenance follow-up, and operational troubleshooting. Our approach ensures that airports, airlines, and air traffic control authorities receive reliable, high-performance equipment that enhances safety, operational efficiency, and long-term sustainability. By integrating modern technologies with proven procurement practices, we contribute to the seamless operation of aviation networks and the overall safety of the airspace.",
     offerings: ["VHF AM Base Stations", "AMHS & AIM Systems", "AIS Systems", "Navigation Spares"],
-    image: "https://corporate.ethiopianairlines.com/images/default-source/corporate-image/600-x-400-px-aircraft-207559ff99f634e0eb3d4ef8ab0252e90.jpg?sfvrsn=6a41cd38_0"
+    image: aviation
   },
   "military": {
     name: "Military",
@@ -42,7 +42,7 @@ const PRODUCT_DATA: Record<string, any> = {
     content: "We supply a wide array of agricultural inputs, including food-grade hermetic bags, jute bags, and other storage and post-harvest protection materials. Our procurement process emphasizes supplier verification, quality inspection, and timely coordination of inland distribution to ensure that farmers and agribusinesses have consistent access to essential materials.",
     lifecycle: "We also provide technical guidance and collaboration with cooperatives and agricultural stakeholders to implement effective storage systems and reduce post-harvest losses. By supporting storage efficiency, product quality, and commodity preservation, we help strengthen supply chains and improve the sustainability and profitability of agricultural operations.",
     offerings: ["Hermetic Bags", "Jute Storage", "Technical Guidance", "Distribution Logistics"],
-    image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=800"
+    image: agreculture
   },
   "water-sewerage": {
     name: "Water & Sewerage",
@@ -56,7 +56,7 @@ const PRODUCT_DATA: Record<string, any> = {
     content: "We provide an extensive range of power-sector equipment, including electric meters, generators, transformers, network cables, and other electrical infrastructure components. Our end-to-end support covers sourcing, specification verification, compliance guidance, and logistics management to ensure products meet relevant technical and regulatory standards.",
     lifecycle: "Our involvement extends to assisting partners with planning, installation coordination, and post-delivery support, ensuring equipment functions efficiently in real-world operations. By delivering reliable and compliant power solutions, we help public and private sector clients implement safe, efficient, and scalable energy systems that drive industrial growth and community development.",
     offerings: ["Electric Meters", "Industrial Generators", "Transformers", "Network Cables"],
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800"
+    image: power
   },
   "transportation": {
     name: "Transport & Storage",
@@ -100,19 +100,24 @@ const ProductDetail: React.FC = () => {
           style={{ backgroundImage: `url(${bgPattern})`, backgroundSize: '150px 150px' }}
         />
 
-        <div className="container mx-auto px-6 relative z-10 text-center pb-12">
-          <div className="md:absolute md:left-6 md:bottom-12 md:mb-0 mb-8 flex justify-center md:block">
-            <Link to="/products" className="group inline-flex items-center gap-3 text-white font-black uppercase tracking-[0.4em] text-[10px] hover:text-[#F9F2D6] transition-all">
-              <FaArrowLeft className="group-hover:-translate-x-2 transition-transform" />
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Back Button - Now positioned at the top to avoid overlap and improve responsiveness */}
+          <div className="flex justify-center md:justify-start mb-8 md:mb-12">
+            <Link to="/products" className="group inline-flex items-center gap-3 text-white font-black uppercase tracking-[0.4em] text-[11px] hover:text-[#F9F2D6] transition-all">
+              <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[#387663] transition-all">
+                <FaArrowLeft className="group-hover:-translate-x-0.5 transition-transform" />
+              </div>
               Back
             </Link>
           </div>
 
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="inline-block">
-            <h1 className="text-4xl md:text-7xl lg:text-5xl xl:text-6xl mt-20 font-black text-[#F9F2D6] uppercase leading-none tracking-tighter">
-              {product.name}
-            </h1>
-          </motion.div>
+          <div className="text-center pb-12">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="inline-block">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-[#F9F2D6] uppercase leading-none tracking-tighter">
+                {product.name}
+              </h1>
+            </motion.div>
+          </div>
         </div>
 
         <div className="absolute bottom-0 left-0 w-full h-24 bg-white" style={{ clipPath: 'polygon(0 100%, 100% 100%, 0 0)' }}></div>
