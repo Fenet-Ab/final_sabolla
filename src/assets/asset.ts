@@ -21,7 +21,10 @@ import sabollaLogo from '../assets/logo/sabolla_logo_icon.png';
 import worldMap from '../assets/world-map.png';
 import bgPattern from "../assets/bg_pattern/image.png";
 import map from '../assets/map.svg';
-
+import disasterRisk from '../assets/disasterRisk.png';
+import ethiopianToll from '../assets/ethiopianToll.png';
+import waterSwage from '../assets/waterSwage.png';
+import yiwu from '../assets/yiwu.png';
 
 export {
     award,
@@ -46,4 +49,9 @@ export {
     worldMap,
     bgPattern,
     map,
+    disasterRisk,
+    ethiopianToll,
+    waterSwage,
+    yiwu
+
 }

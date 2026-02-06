@@ -1,15 +1,16 @@
 
 import type { ReactNode } from 'react';
-import ASI from '../assets/global_images/ASI.png'; 
-import FIRECHEM from '../assets/global_images/FIRECHEM.png'; 
-import JSHK from '../assets/global_images/JSHK.png'; 
-import leviathan from '../assets/global_images/leviathan.png'; 
-import meraj from '../assets/global_images/meraj.png'; 
-import mototruck from '../assets/global_images/mototruck.png'; 
-import rosenbauer from '../assets/global_images/rosenbauer.svg'; 
-import RESQTEC from '../assets/global_images/RESQTEC.png'; 
-import unitexport from '../assets/global_images/unitexport.png'; 
+
+import FIRECHEM from '../assets/global_images/FIRECHEM.png';
+import JSHK from '../assets/global_images/JSHK.png';
+import leviathan from '../assets/global_images/leviathan.png';
+import meraj from '../assets/global_images/meraj.png';
+import mototruck from '../assets/global_images/mototruck.png';
+import rosenbauer from '../assets/global_images/rosenbauer.svg';
+import RESQTEC from '../assets/global_images/RESQTEC.png';
+import unitexport from '../assets/global_images/unitexport.png';
 import * as React from 'react';
+import { yiwu } from '../assets/asset';
 
 export type Partner = {
   name: string;
@@ -19,7 +20,7 @@ export type Partner = {
 };
 
 export const PARTNERS: Partner[] = [
-  
+
   {
     name: "Meraj International FZC",
     description:
@@ -68,7 +69,7 @@ export const PARTNERS: Partner[] = [
     description:
       "RESQTEC is a global innovator in rescue and aircraft recovery equipment with over 50 years of experience, delivering advanced, mission-critical solutions for emergency and recovery teams worldwide.",
     website: "https://rescue.resqtec.com/en_gb/",
-      icon: React.createElement('img', { src: RESQTEC, alt: 'RESQTEC', className: 'w-10 h-10 object-contain' }),
+    icon: React.createElement('img', { src: RESQTEC, alt: 'RESQTEC', className: 'w-10 h-10 object-contain' }),
   },
   {
     name: "Jingshen International (HK) Ltd.",
@@ -81,6 +82,6 @@ export const PARTNERS: Partner[] = [
     name: "Yiwu Foreal Import & Export Co. Ltd.",
     description:
       "Yiwu Foreal Import & Export Co. Ltd. provides reliable global sourcing, import, and export services, supporting international partners with efficient trade execution and transparent operations.",
-    icon: "📊",
+    icon: React.createElement('img', { src: yiwu, alt: 'Jingshen International', className: 'w-10 h-10 object-contain' }),
   },
 ];

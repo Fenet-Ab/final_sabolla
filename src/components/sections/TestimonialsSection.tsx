@@ -2,7 +2,7 @@ import { type JSX } from 'react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { ASI, rosenbauer, sabollaLogo, SACCON } from '../../assets/asset';
+import { ASI, rosenbauer, SACCON, yiwu } from '../../assets/asset';
 
 
 interface Testimonial {
@@ -42,7 +42,7 @@ const testimonials: Testimonial[] = [
         id: 4,
         name: 'Yiwu Foreal Import & Export Co., Ltd.',
         title: 'Hou Fu, Sales Manager',
-        avatarUrl: sabollaLogo,
+        avatarUrl: yiwu,
         quote:
             'Yiwu Foreal Import & Export Co., Ltd. has worked closely with Sabolla International Trading for over five years. During this period, Sabolla has been a reliable and committed partner, supporting the supply and distribution of key products. Their strong understanding of the local market, professionalism in procurement processes, and consistent follow-up have played a vital role in our success.'
     },
@@ -84,7 +84,7 @@ const TestimonialsSection = (): JSX.Element => {
                             <div className="h-[1px] w-8 bg-[#308667]" />
                             <span className="text-xs font-black text-[#308667] uppercase tracking-[0.3em]">Testimonials</span>
                         </motion.div>
-                        <h2 className="text-5xl lg:text-7xl font-black text-[#0B1A13] uppercase tracking-tighter leading-none mb-6">
+                        <h2 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-black text-[#0B1A13] uppercase tracking-tighter leading-none mb-6">
                             Global <br /> <span className="text-[#308667]">Perspectives</span>
                         </h2>
                         <p className="text-sm md:text-base text-[#0B1A13]/60 max-w-sm font-medium leading-relaxed mb-8">
